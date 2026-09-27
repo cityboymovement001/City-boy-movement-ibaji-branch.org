@@ -24,11 +24,69 @@
       line-height: 1.6;
     }
 
+    /* NAVIGATION */
+    nav {
+      background: #087f23;
+      padding: 0 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: auto;
+      min-height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+      gap: 5px;
+    }
+
+    .menu a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 12px 13px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .menu a:hover,
+    .menu a.active {
+      background: rgba(255,255,255,0.18);
+    }
+
+    .menu-button {
+      display: none;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* HEADER */
     header {
       background: linear-gradient(135deg, #087f23, #005c1a);
       color: white;
       text-align: center;
-      padding: 35px 20px;
+      padding: 45px 20px;
     }
 
     header h1 {
@@ -41,6 +99,7 @@
       opacity: 0.95;
     }
 
+    /* CONTENT */
     .container {
       max-width: 700px;
       margin: 35px auto;
@@ -131,6 +190,13 @@
       color: #087f23;
     }
 
+    .direct-contact a {
+      color: #087f23;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
     footer {
       text-align: center;
       padding: 25px 15px;
@@ -140,7 +206,34 @@
       font-size: 14px;
     }
 
-    @media (max-width: 600px) {
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      .menu-button {
+        display: block;
+      }
+
+      .menu {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #087f23;
+        flex-direction: column;
+        padding: 10px 20px 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .menu a {
+        padding: 14px;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+      }
+
       header h1 {
         font-size: 25px;
       }
@@ -154,25 +247,73 @@
 
 <body>
 
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
+
+      <a href="index.html" class="logo">
+        City-Boy Movement
+      </a>
+
+      <button class="menu-button" id="menuButton" aria-label="Open menu">
+        ☰
+      </button>
+
+      <ul class="menu" id="menu">
+
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+
+        <li>
+          <a href="about.html">About</a>
+        </li>
+
+        <li>
+          <a href="leadership.html">Leadership</a>
+        </li>
+
+        <li>
+          <a href="news.html">News</a>
+        </li>
+
+        <li>
+          <a href="gallery.html">Gallery</a>
+        </li>
+
+        <li>
+          <a href="contact.html" class="active">Contact</a>
+        </li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- PAGE HEADER -->
   <header>
-    <h1>City-Boy Movement Ibaji Branch</h1>
-    <p>Connect with us directly</p>
+    <h1>Contact Us</h1>
+    <p>Connect with City-Boy Movement Ibaji Branch</p>
   </header>
 
+
+  <!-- CONTACT FORM -->
   <div class="container">
 
     <div class="contact-box">
 
-      <h2>Contact Us</h2>
+      <h2>Send Us a Message</h2>
 
       <p class="intro">
-        Send us a message through WhatsApp. Fill in your details below and
-        click the button to send your message.
+        Fill in your details below and send your message directly to
+        City-Boy Movement Ibaji Branch through WhatsApp.
       </p>
 
       <form id="whatsappForm">
 
         <label for="name">Your Name</label>
+
         <input
           type="text"
           id="name"
@@ -180,7 +321,9 @@
           required
         >
 
+
         <label for="phone">Phone Number</label>
+
         <input
           type="tel"
           id="phone"
@@ -188,12 +331,15 @@
           required
         >
 
+
         <label for="message">Your Message</label>
+
         <textarea
           id="message"
           placeholder="Write your message here..."
           required
         ></textarea>
+
 
         <button type="submit" class="whatsapp-btn">
           <span class="whatsapp-icon">💬</span>
@@ -202,45 +348,93 @@
 
       </form>
 
+
       <div class="direct-contact">
+
         <p>
-          <strong>WhatsApp:</strong><br>
-          +234 706 396 9564
+          <strong>WhatsApp Contact</strong><br>
+
+          <a
+            href="https://wa.me/2347063969564"
+            target="_blank"
+            rel="noopener"
+          >
+            +234 706 396 9564
+          </a>
         </p>
+
       </div>
 
     </div>
 
   </div>
 
+
+  <!-- FOOTER -->
   <footer>
     © 2026 City-Boy Movement Ibaji Branch. All Rights Reserved.
   </footer>
 
+
+  <!-- JAVASCRIPT -->
   <script>
+
+    /* MOBILE MENU */
+    const menuButton = document.getElementById("menuButton");
+    const menu = document.getElementById("menu");
+
+    menuButton.addEventListener("click", function() {
+      menu.classList.toggle("show");
+    });
+
+
+    /* CLOSE MENU AFTER CLICKING A LINK */
+    document.querySelectorAll(".menu a").forEach(function(link) {
+
+      link.addEventListener("click", function() {
+        menu.classList.remove("show");
+      });
+
+    });
+
+
+    /* WHATSAPP CONTACT FORM */
     document.getElementById("whatsappForm").addEventListener("submit", function(event) {
 
       event.preventDefault();
 
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const message = document.getElementById("message").value.trim();
+      const name =
+        document.getElementById("name").value.trim();
+
+      const phone =
+        document.getElementById("phone").value.trim();
+
+      const message =
+        document.getElementById("message").value.trim();
+
 
       const whatsappNumber = "2347063969564";
 
+
       const whatsappMessage =
-        "Hello City-Boy Movement Ibaji Branch,%0A%0A" +
-        "*New Contact Message*%0A%0A" +
-        "*Name:* " + encodeURIComponent(name) + "%0A" +
-        "*Phone:* " + encodeURIComponent(phone) + "%0A%0A" +
-        "*Message:*%0A" + encodeURIComponent(message);
+        "Hello City-Boy Movement Ibaji Branch,\n\n" +
+        "*New Contact Message*\n\n" +
+        "*Name:* " + name + "\n" +
+        "*Phone:* " + phone + "\n\n" +
+        "*Message:*\n" + message;
+
 
       const whatsappURL =
-        "https://wa.me/" + whatsappNumber + "?text=" + whatsappMessage;
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(whatsappMessage);
+
 
       window.open(whatsappURL, "_blank");
 
     });
+
   </script>
 
 </body>
