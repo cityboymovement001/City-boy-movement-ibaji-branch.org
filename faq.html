@@ -6,65 +6,65 @@
 
   <title>FAQ | City Boy Movement – Ibaji Branch</title>
 
-  <meta name="description" content="Frequently Asked Questions about City Boy Movement – Ibaji Branch.">
-
+  <meta name="description" content="Frequently asked questions about City Boy Movement – Ibaji Branch, Ibaji Local Government Area, Kogi State.">
   <meta name="theme-color" content="#087f23">
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f8f5;
+      background: #f5fff7;
       color: #222;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     /* HEADER */
     header {
-      background: linear-gradient(135deg, #087f23, #005c1a);
+      background: #087f23;
       color: white;
-      padding: 15px 5%;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      padding: 15px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     .logo {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
+      color: #ffd700;
+      margin-bottom: 10px;
     }
 
-    .logo span {
-      display: block;
-      font-size: 12px;
-      color: #ffd700;
-      margin-top: 2px;
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 14px;
-      font-size: 14px;
+      padding: 7px 9px;
+      border-radius: 5px;
+      font-size: 13px;
       font-weight: bold;
     }
 
-    nav a:hover {
-      color: #ffd700;
+    nav a:hover,
+    nav a.active {
+      background: #ffd700;
+      color: #063d15;
     }
 
-    /* WELCOME BAR */
+    /* WELCOME MARQUEE */
     .welcome-bar {
       width: 100%;
       overflow: hidden;
@@ -95,100 +95,110 @@
 
     /* HERO */
     .hero {
-      background: linear-gradient(135deg, #087f23, #005c1a);
+      background: linear-gradient(
+        rgba(0, 92, 26, 0.92),
+        rgba(8, 127, 35, 0.92)
+      );
       color: white;
       text-align: center;
       padding: 70px 20px;
     }
 
     .hero h1 {
-      font-size: clamp(38px, 6vw, 55px);
-      margin-bottom: 15px;
-    }
-
-    .gold-line {
-      width: 90px;
-      height: 4px;
-      background: #ffd700;
-      margin: 15px auto;
-      border-radius: 10px;
+      font-size: 38px;
+      margin-bottom: 12px;
     }
 
     .hero p {
-      font-size: 18px;
+      max-width: 720px;
+      margin: auto;
+      font-size: 17px;
     }
 
-    /* CONTENT */
+    /* MAIN */
     .container {
       max-width: 950px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 45px 20px;
     }
 
-    .intro {
+    .section-title {
+      text-align: center;
+      color: #087f23;
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
       text-align: center;
       max-width: 750px;
-      margin: 0 auto 40px;
+      margin: 0 auto 35px;
       color: #555;
     }
 
     /* FAQ */
+    .faq-container {
+      margin-top: 25px;
+    }
+
     .faq-item {
       background: white;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+      margin-bottom: 14px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
       overflow: hidden;
-      border-left: 5px solid #087f23;
+      border-left: 4px solid #087f23;
     }
 
     .faq-question {
       width: 100%;
       border: none;
       background: white;
-      padding: 20px;
-      text-align: left;
-      font-size: 17px;
-      font-weight: bold;
       color: #087f23;
+      padding: 19px 45px 19px 18px;
+      text-align: left;
+      font-size: 16px;
+      font-weight: bold;
       cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      position: relative;
     }
 
-    .faq-question:hover {
-      background: #f4faf4;
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 18px;
+      top: 14px;
+      font-size: 25px;
+      color: #087f23;
+    }
+
+    .faq-item.active .faq-question {
+      background: #f0fff3;
+    }
+
+    .faq-item.active .faq-question::after {
+      content: "−";
     }
 
     .faq-answer {
       display: none;
-      padding: 0 20px 20px;
+      padding: 0 18px 20px;
       color: #555;
+      background: #f0fff3;
     }
 
     .faq-item.active .faq-answer {
       display: block;
     }
 
-    .faq-icon {
-      font-size: 22px;
-      color: #087f23;
-      transition: transform 0.3s;
-    }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
-    }
-
     /* CONTACT BOX */
     .contact-box {
-      margin-top: 45px;
-      background: linear-gradient(135deg, #087f23, #005c1a);
+      background: #087f23;
       color: white;
-      padding: 45px 25px;
-      border-radius: 18px;
       text-align: center;
+      padding: 40px 20px;
+      border-radius: 14px;
+      margin-top: 45px;
     }
 
     .contact-box h2 {
@@ -197,88 +207,104 @@
     }
 
     .contact-box p {
-      max-width: 700px;
-      margin: 0 auto 22px;
+      max-width: 650px;
+      margin: 0 auto 20px;
     }
 
-    .contact-button {
+    .btn {
       display: inline-block;
       background: #ffd700;
       color: #063d15;
       text-decoration: none;
       padding: 12px 24px;
-      border-radius: 8px;
+      border-radius: 7px;
       font-weight: bold;
     }
 
-    .contact-button:hover {
+    .btn:hover {
       background: white;
+    }
+
+    /* QUICK LINKS */
+    .quick-links {
+      max-width: 900px;
+      margin: 35px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+    }
+
+    .quick-links a {
+      display: block;
+      background: #087f23;
+      color: white;
+      text-decoration: none;
+      padding: 12px 8px;
+      border-radius: 7px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .quick-links a:hover {
+      background: #005c1a;
     }
 
     /* FOOTER */
     footer {
       background: #063d15;
       color: white;
-      padding: 40px 20px;
       text-align: center;
-    }
-
-    footer h3 {
-      color: #ffd700;
-      margin-bottom: 10px;
+      padding: 30px 20px;
+      margin-top: 40px;
     }
 
     footer p {
-      color: #ddd;
       margin: 6px 0;
-    }
-
-    .footer-links {
-      margin: 20px 0;
-    }
-
-    .footer-links a {
-      color: white;
-      text-decoration: none;
-      margin: 0 8px;
       font-size: 14px;
     }
 
-    .footer-links a:hover {
+    footer a {
       color: #ffd700;
+      text-decoration: none;
     }
 
-    .copyright {
-      margin-top: 22px;
-      padding-top: 15px;
-      border-top: 1px solid rgba(255,255,255,0.2);
+    .footer-links {
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      margin: 0 6px;
       font-size: 13px;
-      color: #ccc;
     }
 
     /* MOBILE */
-    @media (max-width: 850px) {
-
-      .nav-container {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      nav {
-        text-align: center;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 5px 6px;
-      }
-
+    @media (max-width: 600px) {
       .hero {
-        padding: 55px 20px;
+        padding: 55px 18px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section-title {
+        font-size: 26px;
       }
 
       .faq-question {
-        font-size: 16px;
+        font-size: 15px;
+        padding-right: 40px;
+      }
+
+      nav a {
+        font-size: 12px;
+        padding: 6px 7px;
       }
     }
   </style>
@@ -286,14 +312,11 @@
 
 <body>
 
-<!-- HEADER -->
-<header>
-
-  <div class="nav-container">
+  <!-- HEADER -->
+  <header>
 
     <div class="logo">
-      CITY BOY MOVEMENT
-      <span>IBAJI BRANCH</span>
+      CITY BOY MOVEMENT – IBAJI BRANCH
     </div>
 
     <nav>
@@ -305,259 +328,272 @@
       <a href="events.html">Events</a>
       <a href="gallery.html">Gallery</a>
       <a href="membership.html">Membership</a>
-      <a href="faq.html">FAQ</a>
+      <a href="faq.html" class="active">FAQ</a>
       <a href="contact.html">Contact</a>
     </nav>
 
-  </div>
+  </header>
 
-</header>
+  <!-- WELCOME MARQUEE -->
+  <div class="welcome-bar">
 
-
-<!-- WELCOME -->
-<div class="welcome-bar">
-  <div class="welcome-text">
-    WELCOME TO CITY BOY MOVEMENT – IBAJI BRANCH. Please connect with us for updates, activities, programmes and information from the movement. — MANAGEMENT
-  </div>
-</div>
-
-
-<!-- HERO -->
-<section class="hero">
-
-  <h1>Frequently Asked Questions</h1>
-
-  <div class="gold-line"></div>
-
-  <p>
-    City Boy Movement – Ibaji Branch
-  </p>
-
-</section>
-
-
-<!-- CONTENT -->
-<main class="container">
-
-  <p class="intro">
-    Find answers to some common questions about the movement,
-    its activities, programmes and how visitors can stay connected.
-  </p>
-
-
-  <!-- FAQ 1 -->
-  <div class="faq-item">
-
-    <button class="faq-question">
-      What is City Boy Movement – Ibaji Branch?
-      <span class="faq-icon">+</span>
-    </button>
-
-    <div class="faq-answer">
-      <p>
-        City Boy Movement – Ibaji Branch is a local branch
-        platform for communication, coordination, activities
-        and community engagement.
-      </p>
+    <div class="welcome-text">
+      WELCOME TO CITY BOY MOVEMENT – IBAJI BRANCH. Please connect with us for updates, activities, programmes and information from the movement. — MANAGEMENT
     </div>
 
   </div>
 
+  <!-- HERO -->
+  <section class="hero">
 
-  <!-- FAQ 2 -->
-  <div class="faq-item">
-
-    <button class="faq-question">
-      Where is the branch located?
-      <span class="faq-icon">+</span>
-    </button>
-
-    <div class="faq-answer">
-      <p>
-        The branch is associated with Ibaji Local Government
-        Area, Kogi State, Nigeria.
-      </p>
-    </div>
-
-  </div>
-
-
-  <!-- FAQ 3 -->
-  <div class="faq-item">
-
-    <button class="faq-question">
-      How can I stay updated?
-      <span class="faq-icon">+</span>
-    </button>
-
-    <div class="faq-answer">
-      <p>
-        Visitors can check the News, Events and Activities
-        sections of this website for published updates.
-      </p>
-    </div>
-
-  </div>
-
-
-  <!-- FAQ 4 -->
-  <div class="faq-item">
-
-    <button class="faq-question">
-      How can I participate in activities?
-      <span class="faq-icon">+</span>
-    </button>
-
-    <div class="faq-answer">
-      <p>
-        Participation information will be provided through
-        official announcements and the appropriate branch
-        representatives.
-      </p>
-    </div>
-
-  </div>
-
-
-  <!-- FAQ 5 -->
-  <div class="faq-item">
-
-    <button class="faq-question">
-      How can I contact the movement?
-      <span class="faq-icon">+</span>
-    </button>
-
-    <div class="faq-answer">
-      <p>
-        Visit the Contact page on this website for available
-        communication channels and official enquiries.
-      </p>
-    </div>
-
-  </div>
-
-
-  <!-- FAQ 6 -->
-  <div class="faq-item">
-
-    <button class="faq-question">
-      Where can I see photographs of activities?
-      <span class="faq-icon">+</span>
-    </button>
-
-    <div class="faq-answer">
-      <p>
-        Photographs will be published in the Gallery section
-        as official images become available.
-      </p>
-    </div>
-
-  </div>
-
-
-  <!-- FAQ 7 -->
-  <div class="faq-item">
-
-    <button class="faq-question">
-      Where can I find upcoming programmes?
-      <span class="faq-icon">+</span>
-    </button>
-
-    <div class="faq-answer">
-      <p>
-        Upcoming programmes and confirmed activities will be
-        published on the Events page when details are available.
-      </p>
-    </div>
-
-  </div>
-
-
-  <!-- FAQ 8 -->
-  <div class="faq-item">
-
-    <button class="faq-question">
-      Is the information on the website subject to change?
-      <span class="faq-icon">+</span>
-    </button>
-
-    <div class="faq-answer">
-      <p>
-        Yes. Programme dates, venues, announcements and other
-        information may be updated when new official details
-        become available.
-      </p>
-    </div>
-
-  </div>
-
-
-  <!-- CONTACT -->
-  <div class="contact-box">
-
-    <h2>Still Have a Question?</h2>
+    <h1>Frequently Asked Questions</h1>
 
     <p>
-      If your question is not answered here, please visit
-      our Contact page for further enquiries.
+      Find answers to common questions about City Boy Movement – Ibaji Branch,
+      activities, programmes and how to stay connected.
     </p>
 
-    <a href="contact.html" class="contact-button">
-      Contact Us
-    </a>
+  </section>
 
-  </div>
+  <!-- MAIN -->
+  <main class="container">
 
-</main>
+    <h2 class="section-title">
+      How Can We Help?
+    </h2>
 
+    <p class="section-intro">
+      Browse the questions below for general information about the branch
+      and this website.
+    </p>
 
-<!-- FOOTER -->
-<footer>
+    <div class="faq-container">
 
-  <h3>
-    CITY BOY MOVEMENT – IBAJI BRANCH
-  </h3>
+      <!-- FAQ 1 -->
+      <div class="faq-item">
 
-  <p>
-    Ibaji Local Government Area, Kogi State, Nigeria
-  </p>
+        <button class="faq-question">
+          What is City Boy Movement?
+        </button>
 
-  <p>
-    Grassroots Organization • Community Engagement • Civic Participation
-  </p>
+        <div class="faq-answer">
+          <p>
+            City Boy Movement – Ibaji Branch is a grassroots organizational
+            platform focused on connecting participants, sharing information
+            and coordinating activities and programmes within Ibaji Local
+            Government Area.
+          </p>
+        </div>
 
-  <div class="footer-links">
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Where is the Ibaji Branch located?
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            The branch is associated with Ibaji Local Government Area,
+            Kogi State, Nigeria. For specific meeting locations or activity
+            venues, please check official announcements or contact the branch.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+
+        <button class="faq-question">
+          How can I stay updated?
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            You can regularly visit the News, Activities and Events sections
+            of this website for updates and announcements.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item">
+
+        <button class="faq-question">
+          How can I participate?
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Interested individuals can contact the branch through the official
+            contact information on this website to ask about current activities,
+            programmes and participation procedures.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item">
+
+        <button class="faq-question">
+          How can I contact the branch?
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Visit the Contact page for the available telephone and WhatsApp
+            contact options.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Are photographs available on the website?
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            The Gallery section is currently being prepared. Photographs will
+            be added when the gallery is ready for publication.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Where can I find upcoming programmes?
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Visit the Events page for planned activities and programmes.
+            Where specific dates, venues or times have not yet been officially
+            announced, the website will indicate that the information is
+            still to be announced.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="faq-item">
+
+        <button class="faq-question">
+          Can information on the website change?
+        </button>
+
+        <div class="faq-answer">
+          <p>
+            Yes. Activities, programmes, contact information and other website
+            content may be updated as new information becomes available.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-box">
+
+      <h2>Need More Information?</h2>
+
+      <p>
+        If your question is not answered here, please contact the branch
+        through the official contact information provided on the website.
+      </p>
+
+      <a href="contact.html" class="btn">
+        Contact Us
+      </a>
+
+    </div>
+
+  </main>
+
+  <!-- QUICK LINKS -->
+  <div class="quick-links">
+
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="activities.html">Activities</a>
+    <a href="news.html">News</a>
+    <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
     <a href="membership.html">Membership</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
     <a href="contact.html">Contact</a>
+
   </div>
 
-  <div class="copyright">
-    © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
-  </div>
+  <!-- FOOTER -->
+  <footer>
 
-</footer>
+    <p>
+      <strong>CITY BOY MOVEMENT – IBAJI BRANCH</strong>
+    </p>
 
+    <p>
+      Ibaji Local Government Area, Kogi State, Nigeria
+    </p>
 
-<!-- FAQ SCRIPT -->
-<script>
-  const questions = document.querySelectorAll(".faq-question");
+    <p>
+      Connecting people, activities, programmes and community engagement.
+    </p>
 
-  questions.forEach(function(question) {
+    <div class="footer-links">
 
-    question.addEventListener("click", function() {
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="membership.html">Membership</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
 
-      const item = this.parentElement;
+    </div>
 
-      item.classList.toggle("active");
+    <p style="margin-top:15px;">
+      © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
+    </p>
+
+  </footer>
+
+  <!-- FAQ SCRIPT -->
+  <script>
+    const questions = document.querySelectorAll(".faq-question");
+
+    questions.forEach(function(question) {
+
+      question.addEventListener("click", function() {
+
+        const currentItem = question.parentElement;
+
+        document.querySelectorAll(".faq-item").forEach(function(item) {
+
+          if (item !== currentItem) {
+            item.classList.remove("active");
+          }
+
+        });
+
+        currentItem.classList.toggle("active");
+
+      });
 
     });
-
-  });
-</script>
+  </script>
 
 </body>
 </html>
