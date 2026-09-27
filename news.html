@@ -6,10 +6,15 @@
 
   <title>News & Updates | City Boy Movement – Ibaji Branch</title>
 
-  <meta name="description" content="Latest news, activities, programmes and updates from City Boy Movement – Ibaji Branch.">
+  <meta
+    name="description"
+    content="Latest news, updates, activities and programmes from City Boy Movement – Ibaji Branch."
+  >
+
   <meta name="theme-color" content="#087f23">
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -17,9 +22,9 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5fff7;
-      color: #18351f;
+      font-family: Arial, sans-serif;
+      background: #f4f8f4;
+      color: #222;
       line-height: 1.6;
     }
 
@@ -33,8 +38,8 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
-    .header-container {
-      max-width: 1100px;
+    .header-inner {
+      max-width: 1150px;
       margin: auto;
       display: flex;
       justify-content: space-between;
@@ -43,35 +48,32 @@
     }
 
     .logo {
-      font-size: 18px;
       font-weight: bold;
-      line-height: 1.3;
-    }
-
-    .logo span {
-      color: #ffd700;
+      font-size: 18px;
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 8px;
+      gap: 7px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 8px 10px;
+      padding: 7px 8px;
       border-radius: 5px;
       font-size: 13px;
     }
 
     nav a:hover,
     nav a.active {
-      background: #ffd700;
-      color: #063d15;
+      background: rgba(255,255,255,0.18);
     }
+
+
+    /* WELCOME BAR */
 
     .welcome-bar {
       width: 100%;
@@ -88,20 +90,31 @@
       display: inline-block;
       padding-left: 100%;
       animation: welcomeMove 18s linear infinite;
-      animation-delay: 2s;
     }
 
     @keyframes welcomeMove {
+
       from {
         transform: translateX(0);
       }
+
       to {
         transform: translateX(-100%);
       }
+
     }
 
+
+    /* HERO */
+
     .hero {
-      background: linear-gradient(135deg, #087f23, #005c1a);
+      background:
+        linear-gradient(
+          135deg,
+          #087f23,
+          #005c1a
+        );
+
       color: white;
       text-align: center;
       padding: 65px 20px;
@@ -113,28 +126,34 @@
     }
 
     .hero p {
-      max-width: 750px;
+      max-width: 760px;
       margin: auto;
       font-size: 17px;
     }
 
+
+    /* CONTAINER */
+
     .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 50px 20px;
+      max-width: 1150px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
+
+
+    /* FEATURED NEWS */
 
     .featured {
       background: white;
-      border-radius: 14px;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.1);
-      margin-bottom: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.09);
+      margin-bottom: 35px;
     }
 
-    .featured img {
+    .featured-image {
       width: 100%;
-      height: 380px;
+      max-height: 450px;
       object-fit: cover;
       display: block;
     }
@@ -143,12 +162,12 @@
       padding: 25px;
     }
 
-    .category {
+    .featured-label {
       display: inline-block;
       background: #ffd700;
       color: #063d15;
-      padding: 5px 11px;
-      border-radius: 20px;
+      padding: 5px 10px;
+      border-radius: 4px;
       font-size: 12px;
       font-weight: bold;
       margin-bottom: 10px;
@@ -156,32 +175,40 @@
 
     .featured h2 {
       color: #087f23;
-      font-size: 28px;
-      margin-bottom: 10px;
+      font-size: 27px;
+      margin-bottom: 8px;
     }
 
     .date {
-      color: #666;
-      font-size: 14px;
+      color: #777;
+      font-size: 13px;
       margin-bottom: 12px;
+    }
+
+
+    /* NEWS GRID */
+
+    .section-title {
+      color: #087f23;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
     }
 
     .news-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      grid-template-columns:
+        repeat(3, 1fr);
+      gap: 22px;
     }
 
     .news-card {
       background: white;
-      border-radius: 12px;
+      border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
-    }
-
-    .news-card:hover {
-      transform: translateY(-4px);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
     }
 
     .news-card img {
@@ -192,529 +219,1131 @@
     }
 
     .news-content {
-      padding: 20px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
-    .news-content h3 {
+    .category {
       color: #087f23;
-      font-size: 20px;
-      margin: 7px 0 10px;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 5px;
     }
 
-    .news-content p {
-      margin-bottom: 10px;
+    .news-card h3 {
+      color: #222;
+      margin-bottom: 7px;
+      font-size: 19px;
     }
 
+    .news-card p {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .news-actions {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .read-btn,
     .whatsapp-btn {
       display: inline-block;
-      margin-top: 10px;
-      background: #087f23;
-      color: white;
       text-decoration: none;
-      padding: 9px 13px;
-      border-radius: 6px;
+      padding: 9px 12px;
+      border-radius: 5px;
       font-size: 13px;
       font-weight: bold;
     }
 
-    .whatsapp-btn:hover {
-      background: #005c1a;
+    .read-btn {
+      background: #087f23;
+      color: white;
     }
 
-    .follow-box {
-      margin-top: 45px;
-      background: #e8f7ec;
-      border: 1px solid #b8dfc1;
-      padding: 25px;
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+    }
+
+
+    /* SAVED NEWS */
+
+    #savedNewsSection {
+      display: none;
+      margin-top: 40px;
+    }
+
+    .saved-label {
+      background: #e7f8ea;
+      color: #087f23;
+      padding: 12px;
+      border-left: 5px solid #087f23;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+
+    /* EMPTY */
+
+    .empty-news {
+      background: white;
+      padding: 45px 20px;
       border-radius: 10px;
       text-align: center;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      color: #777;
     }
 
-    .follow-box h2 {
+    .empty-news h3 {
       color: #087f23;
       margin-bottom: 8px;
     }
 
-    .admin-box {
-      margin-top: 40px;
-      text-align: center;
-      background: #ffffff;
-      border: 1px dashed #087f23;
+
+    /* FOLLOW */
+
+    .follow-box {
+      background: #087f23;
+      color: white;
+      padding: 30px 20px;
       border-radius: 10px;
-      padding: 22px;
+      text-align: center;
+      margin-top: 45px;
     }
 
-    .admin-box p {
-      margin-bottom: 10px;
-      color: #555;
+    .follow-box h2 {
+      margin-bottom: 8px;
+    }
+
+    .follow-box p {
+      margin-bottom: 15px;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      background: #ffd700;
+      color: #063d15;
+      text-decoration: none;
+      padding: 11px 18px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+
+    /* ADMIN LINK */
+
+    .admin-area {
+      text-align: center;
+      margin-top: 30px;
     }
 
     .admin-link {
-      display: inline-block;
-      background: #087f23;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 6px;
+      color: #999;
+      font-size: 12px;
       text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
     }
 
     .admin-link:hover {
-      background: #005c1a;
-    }
-
-    .quick-links {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-top: 35px;
-    }
-
-    .quick-links a {
-      background: white;
-      padding: 15px;
-      text-align: center;
-      border-radius: 8px;
-      text-decoration: none;
       color: #087f23;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
+
+
+    /* FOOTER */
 
     footer {
       background: #063d15;
       color: white;
       text-align: center;
       padding: 30px 20px;
+      margin-top: 50px;
     }
 
-    footer a {
+    .footer-links {
+      margin: 12px 0;
+    }
+
+    .footer-links a {
       color: #ffd700;
       text-decoration: none;
-      margin: 0 5px;
+      margin: 0 7px;
+      font-size: 13px;
     }
 
-    footer p {
-      margin: 8px 0;
-    }
 
-    .admin-footer {
-      margin-top: 15px;
-      font-size: 12px;
-      opacity: 0.75;
-    }
-
-    .admin-footer a {
-      color: #ccc;
-    }
+    /* MOBILE */
 
     @media (max-width: 850px) {
+
       .news-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
+
     }
 
+
     @media (max-width: 650px) {
-      .header-container {
+
+      .header-inner {
         flex-direction: column;
       }
 
-      .hero h1 {
-        font-size: 30px;
+      nav a {
+        font-size: 12px;
       }
 
-      .featured img {
-        height: 260px;
+      .hero h1 {
+        font-size: 29px;
       }
 
       .news-grid {
         grid-template-columns: 1fr;
       }
 
-      .quick-links {
-        grid-template-columns: repeat(2, 1fr);
+      .featured h2 {
+        font-size: 23px;
       }
+
     }
 
-    @media (max-width: 450px) {
-      .quick-links {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-  <div class="header-container">
+
+  <div class="header-inner">
 
     <div class="logo">
-      CITY BOY MOVEMENT<br>
-      <span>IBAJI BRANCH</span>
+      CITY BOY MOVEMENT – IBAJI BRANCH
     </div>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="activities.html">Activities</a>
-      <a href="news.html" class="active">News</a>
-      <a href="events.html">Events</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="membership.html">Membership</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="leadership.html">
+        Leadership
+      </a>
+
+      <a href="activities.html">
+        Activities
+      </a>
+
+      <a
+        href="news.html"
+        class="active"
+      >
+        News
+      </a>
+
+      <a href="events.html">
+        Events
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a href="membership.html">
+        Membership
+      </a>
+
+      <a href="faq.html">
+        FAQ
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
     </nav>
 
   </div>
+
 </header>
 
+
+<!-- WELCOME -->
+
 <div class="welcome-bar">
+
   <div class="welcome-text">
-    WELCOME TO CITY BOY MOVEMENT – IBAJI BRANCH. Please connect with us for updates, activities, programmes and information from the movement. — MANAGEMENT
+
+    WELCOME TO CITY BOY MOVEMENT – IBAJI BRANCH.
+    Please connect with us for updates, activities,
+    programmes and information from the movement.
+    — MANAGEMENT
+
   </div>
+
 </div>
 
+
+<!-- HERO -->
+
 <section class="hero">
-  <h1>News & Updates</h1>
+
+  <h1>
+    News & Updates
+  </h1>
+
   <p>
-    Latest activities, programmes, announcements and updates from City Boy Movement – Ibaji Branch.
+    Latest news, activities, programmes and updates
+    from City Boy Movement – Ibaji Branch.
   </p>
+
 </section>
+
 
 <main class="container">
 
+
   <!-- FEATURED NEWS -->
 
-  <article class="featured">
+  <section
+    class="featured"
+    id="featuredNews"
+  >
 
     <img
+      class="featured-image"
       src="https://i.ibb.co/kgNhJbnG/IMG-20260916-WA0171.jpg"
-      alt="City Boy Movement Ibaji Branch activity"
+      alt="City Boy Movement activity"
     >
 
     <div class="featured-content">
 
-      <span class="category">FEATURED UPDATE</span>
+      <span class="featured-label">
+        FEATURED UPDATE
+      </span>
 
-      <div class="date">September 2026</div>
+      <h2>
+        City Boy Movement – Ibaji Branch
+      </h2>
 
-      <h2>City Boy Movement – Ibaji Branch Activity Update</h2>
+      <div class="date">
+        Latest Branch Update
+      </div>
 
       <p>
-        The City Boy Movement – Ibaji Branch continues to connect members,
-        participants and communities through activities, communication and
-        grassroots engagement across Ibaji Local Government Area.
+        Stay connected with City Boy Movement – Ibaji Branch
+        for information about activities, programmes,
+        community engagement and branch updates.
       </p>
 
-      <a
-        class="whatsapp-btn"
-        href="https://wa.me/?text=City%20Boy%20Movement%20%E2%80%93%20Ibaji%20Branch%20Activity%20Update"
-        target="_blank"
-        rel="noopener"
-      >
-        Share on WhatsApp
-      </a>
-
     </div>
-
-  </article>
-
-
-  <!-- NEWS CARDS -->
-
-  <section class="news-grid">
-
-    <article class="news-card">
-
-      <img
-        src="https://i.ibb.co/NPL2zbw/IMG-20260920-WA0045.jpg"
-        alt="City Boy Movement community engagement"
-        loading="lazy"
-      >
-
-      <div class="news-content">
-
-        <span class="category">ACTIVITY</span>
-
-        <div class="date">September 2026</div>
-
-        <h3>Community Engagement</h3>
-
-        <p>
-          Community engagement and interaction among members and participants
-          of the movement.
-        </p>
-
-        <a
-          class="whatsapp-btn"
-          href="https://wa.me/?text=City%20Boy%20Movement%20%E2%80%93%20Ibaji%20Branch%20Community%20Engagement"
-          target="_blank"
-          rel="noopener"
-        >
-          WhatsApp
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <article class="news-card">
-
-      <img
-        src="https://i.ibb.co/nM7D3JWX/IMG-20260920-WA0067.jpg"
-        alt="City Boy Movement members engagement"
-        loading="lazy"
-      >
-
-      <div class="news-content">
-
-        <span class="category">MEMBERS</span>
-
-        <div class="date">September 2026</div>
-
-        <h3>Members Engagement</h3>
-
-        <p>
-          Members connecting and participating in branch activities and
-          community interaction.
-        </p>
-
-        <a
-          class="whatsapp-btn"
-          href="https://wa.me/?text=City%20Boy%20Movement%20%E2%80%93%20Ibaji%20Branch%20Members%20Engagement"
-          target="_blank"
-          rel="noopener"
-        >
-          WhatsApp
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <article class="news-card">
-
-      <img
-        src="https://i.ibb.co/NgDT1rhV/IMG-20260824-WA0263.jpg"
-        alt="City Boy Movement programme"
-        loading="lazy"
-      >
-
-      <div class="news-content">
-
-        <span class="category">PROGRAMME</span>
-
-        <div class="date">August 2026</div>
-
-        <h3>Movement Programme</h3>
-
-        <p>
-          Information and updates relating to movement programmes and
-          activities.
-        </p>
-
-        <a
-          class="whatsapp-btn"
-          href="https://wa.me/?text=City%20Boy%20Movement%20%E2%80%93%20Ibaji%20Branch%20Movement%20Programme"
-          target="_blank"
-          rel="noopener"
-        >
-          WhatsApp
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <article class="news-card">
-
-      <img
-        src="https://i.ibb.co/yFZWtSPt/IMG-20260920-WA0037.jpg"
-        alt="City Boy Movement grassroots gathering"
-        loading="lazy"
-      >
-
-      <div class="news-content">
-
-        <span class="category">GRASSROOTS</span>
-
-        <div class="date">September 2026</div>
-
-        <h3>Grassroots Gathering</h3>
-
-        <p>
-          Members and participants coming together for communication and
-          grassroots engagement.
-        </p>
-
-        <a
-          class="whatsapp-btn"
-          href="https://wa.me/?text=City%20Boy%20Movement%20%E2%80%93%20Ibaji%20Branch%20Grassroots%20Gathering"
-          target="_blank"
-          rel="noopener"
-        >
-          WhatsApp
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <article class="news-card">
-
-      <img
-        src="https://i.ibb.co/BHgMW1WQ/IMG-20260919-WA0013.jpg"
-        alt="City Boy Movement branch activity"
-        loading="lazy"
-      >
-
-      <div class="news-content">
-
-        <span class="category">BRANCH ACTIVITY</span>
-
-        <div class="date">September 2026</div>
-
-        <h3>Branch Activity</h3>
-
-        <p>
-          A branch activity bringing members together for participation and
-          communication.
-        </p>
-
-        <a
-          class="whatsapp-btn"
-          href="https://wa.me/?text=City%20Boy%20Movement%20%E2%80%93%20Ibaji%20Branch%20Activity"
-          target="_blank"
-          rel="noopener"
-        >
-          WhatsApp
-        </a>
-
-      </div>
-
-    </article>
-
-
-    <article class="news-card">
-
-      <img
-        src="https://i.ibb.co/kgNhJbnG/IMG-20260916-WA0171.jpg"
-        alt="City Boy Movement member participation"
-        loading="lazy"
-      >
-
-      <div class="news-content">
-
-        <span class="category">PARTICIPATION</span>
-
-        <div class="date">September 2026</div>
-
-        <h3>Member Participation</h3>
-
-        <p>
-          Participation and engagement within City Boy Movement – Ibaji Branch.
-        </p>
-
-        <a
-          class="whatsapp-btn"
-          href="https://wa.me/?text=City%20Boy%20Movement%20%E2%80%93%20Ibaji%20Branch%20Member%20Participation"
-          target="_blank"
-          rel="noopener"
-        >
-          WhatsApp
-        </a>
-
-      </div>
-
-    </article>
 
   </section>
 
 
-  <!-- FOLLOW BOX -->
+  <!-- AUTOMATIC NEWS -->
 
-  <div class="follow-box">
+  <section id="savedNewsSection">
 
-    <h2>Follow Our Updates</h2>
+    <h2 class="section-title">
+      Latest News
+    </h2>
+
+    <div class="saved-label">
+      📰 Latest updates published through the website
+    </div>
+
+    <div
+      class="news-grid"
+      id="savedNewsGrid"
+    ></div>
+
+  </section>
+
+
+  <!-- GENERAL UPDATES -->
+
+  <section>
+
+    <h2 class="section-title">
+      Updates & Activities
+    </h2>
+
+    <div class="news-grid">
+
+
+      <article class="news-card">
+
+        <img
+          src="https://i.ibb.co/NPL2zbw/IMG-20260920-WA0045.jpg"
+          alt="Community engagement"
+        >
+
+        <div class="news-content">
+
+          <div class="category">
+            Community
+          </div>
+
+          <h3>
+            Community Engagement
+          </h3>
+
+          <div class="date">
+            September 2026
+          </div>
+
+          <p>
+            Updates on community engagement activities
+            and branch participation across Ibaji.
+          </p>
+
+          <div class="news-actions">
+
+            <a
+              href="activities.html"
+              class="read-btn"
+            >
+              View Activities
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="news-card">
+
+        <img
+          src="https://i.ibb.co/nM7D3JWX/IMG-20260920-WA0067.jpg"
+          alt="Members engagement"
+        >
+
+        <div class="news-content">
+
+          <div class="category">
+            Members
+          </div>
+
+          <h3>
+            Members Engagement
+          </h3>
+
+          <div class="date">
+            September 2026
+          </div>
+
+          <p>
+            Information about member participation
+            and movement activities.
+          </p>
+
+          <div class="news-actions">
+
+            <a
+              href="membership.html"
+              class="read-btn"
+            >
+              Membership
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="news-card">
+
+        <img
+          src="https://i.ibb.co/NgDT1rhV/IMG-20260824-WA0263.jpg"
+          alt="Movement programme"
+        >
+
+        <div class="news-content">
+
+          <div class="category">
+            Programme
+          </div>
+
+          <h3>
+            Movement Programme
+          </h3>
+
+          <div class="date">
+            September 2026
+          </div>
+
+          <p>
+            Follow the website for information about
+            programmes and activities.
+          </p>
+
+          <div class="news-actions">
+
+            <a
+              href="events.html"
+              class="read-btn"
+            >
+              View Events
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="news-card">
+
+        <img
+          src="https://i.ibb.co/yFZWtSPt/IMG-20260920-WA0037.jpg"
+          alt="Grassroots gathering"
+        >
+
+        <div class="news-content">
+
+          <div class="category">
+            Community
+          </div>
+
+          <h3>
+            Grassroots Gathering
+          </h3>
+
+          <div class="date">
+            September 2026
+          </div>
+
+          <p>
+            Branch information and community participation
+            updates from Ibaji.
+          </p>
+
+          <div class="news-actions">
+
+            <a
+              href="contact.html"
+              class="read-btn"
+            >
+              Contact Us
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="news-card">
+
+        <img
+          src="https://i.ibb.co/BHgMW1WQ/IMG-20260919-WA0013.jpg"
+          alt="Branch activity"
+        >
+
+        <div class="news-content">
+
+          <div class="category">
+            Activity
+          </div>
+
+          <h3>
+            Branch Activity
+          </h3>
+
+          <div class="date">
+            September 2026
+          </div>
+
+          <p>
+            Information about activities involving members
+            and community participants.
+          </p>
+
+          <div class="news-actions">
+
+            <a
+              href="activities.html"
+              class="read-btn"
+            >
+              Activities
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <article class="news-card">
+
+        <img
+          src="https://i.ibb.co/kgNhJbnG/IMG-20260916-WA0171.jpg"
+          alt="Member participation"
+        >
+
+        <div class="news-content">
+
+          <div class="category">
+            Update
+          </div>
+
+          <h3>
+            Member Participation
+          </h3>
+
+          <div class="date">
+            September 2026
+          </div>
+
+          <p>
+            Stay connected for new updates from
+            City Boy Movement – Ibaji Branch.
+          </p>
+
+          <div class="news-actions">
+
+            <a
+              href="membership.html"
+              class="read-btn"
+            >
+              Join Us
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- FOLLOW -->
+
+  <section class="follow-box">
+
+    <h2>
+      Stay Connected
+    </h2>
 
     <p>
-      Check this page regularly for new activities, programmes and official
-      updates from the branch.
+      Follow the website for branch news, activities,
+      programmes and other official information.
     </p>
 
-  </div>
+    <a
+      href="contact.html"
+      class="contact-btn"
+    >
+      Contact the Branch
+    </a>
+
+  </section>
 
 
-  <!-- ADMIN ACCESS -->
+  <!-- ADMIN -->
 
-  <div class="admin-box">
+  <div class="admin-area">
 
-    <p>
-      <strong>News Management</strong><br>
-      Authorized website managers can use the News Management page to prepare
-      new news updates.
-    </p>
-
-    <a class="admin-link" href="admin-news.html">
-      Open News Management
+    <a
+      href="admin-login.html"
+      class="admin-link"
+    >
+      🔐 Admin Login
     </a>
 
   </div>
 
 
-  <!-- QUICK LINKS -->
-
-  <div class="quick-links">
-
-    <a href="leadership.html">Leadership</a>
-    <a href="activities.html">Activities</a>
-    <a href="news.html">News</a>
-    <a href="events.html">Events</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="membership.html">Membership</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-
-  </div>
-
 </main>
 
+
+<!-- FOOTER -->
 
 <footer>
 
   <p>
-    <strong>CITY BOY MOVEMENT – IBAJI BRANCH</strong>
+    &copy; 2026 City Boy Movement – Ibaji Branch.
+    All rights reserved.
   </p>
 
-  <p>
-    Ibaji Local Government Area, Kogi State, Nigeria
-  </p>
+  <div class="footer-links">
 
-  <p>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a> |
-    <a href="membership.html">Membership</a> |
-    <a href="privacy.html">Privacy</a> |
-    <a href="terms.html">Terms</a> |
-    <a href="contact.html">Contact</a>
-  </p>
+    <a href="privacy.html">
+      Privacy
+    </a>
 
-  <p class="admin-footer">
-    <a href="admin-news.html">Admin News Management</a>
-  </p>
+    <a href="terms.html">
+      Terms
+    </a>
 
-  <p>
-    © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
-  </p>
+    <a href="contact.html">
+      Contact
+    </a>
+
+  </div>
 
 </footer>
+
+
+<script>
+
+  /* =========================================
+     READ NEWS SAVED BY ADMIN
+  ========================================= */
+
+  function getSavedNews() {
+
+    return JSON.parse(
+      localStorage.getItem("cityBoyNews") || "[]"
+    );
+
+  }
+
+
+  /* =========================================
+     FORMAT DATE
+  ========================================= */
+
+  function formatDate(dateValue) {
+
+    if (!dateValue) {
+      return "";
+    }
+
+    const parts =
+      dateValue.split("-");
+
+    if (parts.length !== 3) {
+      return dateValue;
+    }
+
+    return parts[2] + "/" +
+           parts[1] + "/" +
+           parts[0];
+
+  }
+
+
+  /* =========================================
+     ESCAPE HTML
+  ========================================= */
+
+  function escapeHTML(value) {
+
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  /* =========================================
+     CREATE WHATSAPP LINK
+  ========================================= */
+
+  function createWhatsAppLink(article) {
+
+    const message =
+      article.headline +
+      "\n\n" +
+      article.story;
+
+    return (
+      "https://wa.me/?text=" +
+      encodeURIComponent(message)
+    );
+
+  }
+
+
+  /* =========================================
+     DISPLAY SAVED NEWS
+  ========================================= */
+
+  function displaySavedNews() {
+
+    const news =
+      getSavedNews();
+
+    const section =
+      document.getElementById(
+        "savedNewsSection"
+      );
+
+    const grid =
+      document.getElementById(
+        "savedNewsGrid"
+      );
+
+
+    if (news.length === 0) {
+
+      section.style.display =
+        "none";
+
+      return;
+
+    }
+
+
+    section.style.display =
+      "block";
+
+
+    grid.innerHTML =
+      "";
+
+
+    news
+      .slice()
+      .reverse()
+      .forEach(function(article) {
+
+
+        const card =
+          document.createElement("article");
+
+        card.className =
+          "news-card";
+
+
+        let imageHTML = "";
+
+
+        if (article.image) {
+
+          imageHTML = `
+
+            <img
+              src="${escapeHTML(article.image)}"
+              alt="${escapeHTML(article.headline)}"
+              onerror="this.style.display='none';"
+            >
+
+          `;
+
+        }
+
+
+        const storyPreview =
+          article.story.length > 180
+            ? article.story.substring(0, 180) + "..."
+            : article.story;
+
+
+        card.innerHTML = `
+
+          ${imageHTML}
+
+          <div class="news-content">
+
+            <div class="category">
+              ${escapeHTML(article.category)}
+            </div>
+
+            <h3>
+              ${escapeHTML(article.headline)}
+            </h3>
+
+            <div class="date">
+              ${escapeHTML(
+                formatDate(article.date)
+              )}
+            </div>
+
+            <p>
+              ${escapeHTML(storyPreview)}
+            </p>
+
+            <div class="news-actions">
+
+              <a
+                href="javascript:void(0)"
+                class="read-btn"
+                onclick="showFullStory('${escapeHTML(article.id)}')"
+              >
+                Read Full Story
+              </a>
+
+              <a
+                href="${createWhatsAppLink(article)}"
+                target="_blank"
+                class="whatsapp-btn"
+              >
+                WhatsApp
+              </a>
+
+            </div>
+
+          </div>
+
+        `;
+
+
+        grid.appendChild(card);
+
+      });
+
+  }
+
+
+  /* =========================================
+     SHOW FULL STORY
+  ========================================= */
+
+  function showFullStory(id) {
+
+    const news =
+      getSavedNews();
+
+
+    const article =
+      news.find(function(item) {
+
+        return item.id === id;
+
+      });
+
+
+    if (!article) {
+
+      alert(
+        "This news article could not be found."
+      );
+
+      return;
+
+    }
+
+
+    const overlay =
+      document.createElement("div");
+
+
+    overlay.style.position =
+      "fixed";
+
+    overlay.style.top =
+      "0";
+
+    overlay.style.left =
+      "0";
+
+    overlay.style.width =
+      "100%";
+
+    overlay.style.height =
+      "100%";
+
+    overlay.style.background =
+      "rgba(0,0,0,0.75)";
+
+    overlay.style.zIndex =
+      "9999";
+
+    overlay.style.overflowY =
+      "auto";
+
+    overlay.style.padding =
+      "30px 15px";
+
+
+    let imageHTML = "";
+
+    if (article.image) {
+
+      imageHTML = `
+
+        <img
+          src="${escapeHTML(article.image)}"
+          alt="${escapeHTML(article.headline)}"
+          style="
+            width:100%;
+            max-height:400px;
+            object-fit:cover;
+            border-radius:8px;
+            margin-bottom:18px;
+          "
+        >
+
+      `;
+
+    }
+
+
+    const box =
+      document.createElement("div");
+
+
+    box.style.maxWidth =
+      "800px";
+
+    box.style.margin =
+      "auto";
+
+    box.style.background =
+      "white";
+
+    box.style.borderRadius =
+      "12px";
+
+    box.style.padding =
+      "25px";
+
+    box.style.position =
+      "relative";
+
+
+    box.innerHTML = `
+
+      <button
+        onclick="this.closest('.news-overlay').remove()"
+        style="
+          position:absolute;
+          right:15px;
+          top:15px;
+          border:none;
+          background:#b00020;
+          color:white;
+          width:35px;
+          height:35px;
+          border-radius:50%;
+          cursor:pointer;
+          font-size:18px;
+        "
+      >
+        ×
+      </button>
+
+      ${imageHTML}
+
+      <div
+        style="
+          color:#087f23;
+          font-size:13px;
+          font-weight:bold;
+          text-transform:uppercase;
+          margin-bottom:7px;
+        "
+      >
+        ${escapeHTML(article.category)}
+      </div>
+
+      <h2
+        style="
+          color:#087f23;
+          margin-bottom:8px;
+          padding-right:40px;
+        "
+      >
+        ${escapeHTML(article.headline)}
+      </h2>
+
+      <div
+        style="
+          color:#777;
+          font-size:13px;
+          margin-bottom:18px;
+        "
+      >
+        ${escapeHTML(formatDate(article.date))}
+      </div>
+
+      <div
+        style="
+          white-space:pre-wrap;
+          color:#333;
+          line-height:1.8;
+        "
+      >
+        ${escapeHTML(article.story)}
+      </div>
+
+      <div style="margin-top:20px;">
+
+        <a
+          href="${createWhatsAppLink(article)}"
+          target="_blank"
+          style="
+            display:inline-block;
+            background:#25D366;
+            color:white;
+            text-decoration:none;
+            padding:11px 16px;
+            border-radius:6px;
+            font-weight:bold;
+          "
+        >
+          Share on WhatsApp
+        </a>
+
+      </div>
+
+    `;
+
+
+    overlay.className =
+      "news-overlay";
+
+
+    overlay.appendChild(box);
+
+    document.body.appendChild(overlay);
+
+  }
+
+
+  /* =========================================
+     INITIAL LOAD
+  ========================================= */
+
+  displaySavedNews();
+
+
+  /* =========================================
+     UPDATE WHEN PAGE BECOMES ACTIVE AGAIN
+  ========================================= */
+
+  window.addEventListener(
+    "storage",
+    function() {
+      displaySavedNews();
+    }
+  );
+
+</script>
+
 
 </body>
 </html>
