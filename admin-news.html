@@ -4,8 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>News Management | City Boy Movement – Ibaji Branch</title>
-  <meta name="theme-color" content="#087f23">
+  <title>Admin – News Management | City Boy Movement – Ibaji Branch</title>
 
   <style>
     * {
@@ -15,9 +14,9 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4fff6;
-      color: #18351f;
+      font-family: Arial, sans-serif;
+      background: #f3f7f3;
+      color: #222;
       line-height: 1.6;
     }
 
@@ -28,130 +27,270 @@
     }
 
     .header-inner {
-      max-width: 900px;
+      max-width: 1150px;
       margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
     }
 
-    header h1 {
-      font-size: 23px;
-    }
-
-    header p {
-      color: #ffd700;
-      margin-top: 4px;
+    .logo {
+      font-size: 18px;
       font-weight: bold;
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 30px 15px 50px;
+    .header-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
-    .notice {
-      background: #fff8d8;
-      border-left: 5px solid #ffd700;
-      padding: 16px;
-      border-radius: 8px;
+    .header-btn {
+      border: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .dashboard-btn {
+      background: white;
+      color: #087f23;
+    }
+
+    .logout-btn {
+      background: #ffd700;
+      color: #063d15;
+    }
+
+    .welcome-bar {
+      width: 100%;
+      overflow: hidden;
+      background: #ffd700;
+      color: #063d15;
+      padding: 11px 0;
+      white-space: nowrap;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .welcome-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: welcomeMove 18s linear infinite;
+    }
+
+    @keyframes welcomeMove {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .container {
+      max-width: 1150px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .page-heading {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
       margin-bottom: 25px;
     }
 
-    .card {
+    .page-heading h1 {
+      color: #087f23;
+      margin-bottom: 7px;
+    }
+
+    .page-heading p {
+      color: #666;
+    }
+
+    .form-box,
+    .saved-box {
       background: white;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
       margin-bottom: 25px;
     }
 
-    .card h2 {
+    .section-title {
       color: #087f23;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
     }
 
     label {
       display: block;
       font-weight: bold;
-      margin: 15px 0 7px;
+      color: #063d15;
+      margin-bottom: 7px;
     }
 
     input,
+    select,
     textarea {
       width: 100%;
       padding: 13px;
-      border: 1px solid #c8d8cc;
+      border: 1px solid #ccc;
       border-radius: 7px;
       font-size: 15px;
-      font-family: inherit;
-    }
-
-    textarea {
-      min-height: 160px;
-      resize: vertical;
+      font-family: Arial, sans-serif;
     }
 
     input:focus,
+    select:focus,
     textarea:focus {
       outline: none;
       border-color: #087f23;
-      box-shadow: 0 0 0 2px rgba(8,127,35,0.1);
     }
 
-    .btn {
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    .form-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .primary-btn,
+    .secondary-btn,
+    .danger-btn {
       border: none;
-      cursor: pointer;
-      padding: 13px 20px;
-      border-radius: 7px;
+      padding: 12px 18px;
+      border-radius: 6px;
       font-weight: bold;
-      font-size: 15px;
-      margin-top: 20px;
+      cursor: pointer;
     }
 
-    .generate {
+    .primary-btn {
       background: #087f23;
       color: white;
     }
 
-    .clear {
-      background: #ddd;
-      color: #222;
-      margin-left: 8px;
+    .primary-btn:hover {
+      background: #005c1a;
     }
 
-    .logout {
+    .secondary-btn {
+      background: #e8f0e8;
+      color: #087f23;
+    }
+
+    .danger-btn {
       background: #b00020;
       color: white;
-      margin-left: 8px;
     }
 
-    .output {
+    .message {
       display: none;
-    }
-
-    .output textarea {
-      min-height: 300px;
-      font-family: monospace;
-      font-size: 13px;
-    }
-
-    .copy {
-      background: #ffd700;
-      color: #063d15;
-    }
-
-    .back {
-      display: inline-block;
-      margin-top: 15px;
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 7px;
+      background: #e7f8ea;
       color: #087f23;
       font-weight: bold;
-      text-decoration: none;
+    }
+
+    .saved-news {
+      border: 1px solid #ddd;
+      border-radius: 9px;
+      padding: 18px;
+      margin-bottom: 15px;
+    }
+
+    .saved-news:last-child {
+      margin-bottom: 0;
+    }
+
+    .saved-news h3 {
+      color: #087f23;
+      margin-bottom: 7px;
+    }
+
+    .news-meta {
+      color: #777;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .news-image {
+      width: 100%;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 7px;
+      margin: 10px 0;
+    }
+
+    .story-preview {
+      white-space: pre-wrap;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    .article-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .edit-btn,
+    .delete-btn {
+      border: none;
+      padding: 9px 13px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .edit-btn {
+      background: #087f23;
+      color: white;
+    }
+
+    .delete-btn {
+      background: #b00020;
+      color: white;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 35px 15px;
+      color: #777;
+    }
+
+    .notice {
+      background: #fff8d9;
+      border-left: 5px solid #ffd700;
+      padding: 16px;
+      border-radius: 6px;
+      font-size: 14px;
     }
 
     footer {
       background: #063d15;
       color: white;
       text-align: center;
-      padding: 25px 15px;
+      padding: 30px 20px;
+      margin-top: 50px;
     }
 
     footer a {
@@ -159,14 +298,24 @@
       text-decoration: none;
     }
 
-    @media (max-width: 600px) {
-      .card {
-        padding: 18px;
+    @media (max-width: 700px) {
+
+      .header-inner {
+        flex-direction: column;
+        text-align: center;
       }
 
-      .btn {
+      .form-buttons,
+      .article-actions {
+        flex-direction: column;
+      }
+
+      .primary-btn,
+      .secondary-btn,
+      .danger-btn,
+      .edit-btn,
+      .delete-btn {
         width: 100%;
-        margin-left: 0;
       }
     }
   </style>
@@ -175,404 +324,800 @@
 <body>
 
 <header>
+
   <div class="header-inner">
-    <h1>News Management</h1>
-    <p>City Boy Movement – Ibaji Branch</p>
+
+    <div class="logo">
+      CITY BOY MOVEMENT – IBAJI BRANCH
+    </div>
+
+    <div class="header-buttons">
+
+      <a
+        href="admin-dashboard.html"
+        class="header-btn dashboard-btn"
+      >
+        Dashboard
+      </a>
+
+      <button
+        class="header-btn logout-btn"
+        onclick="logout()"
+      >
+        Logout
+      </button>
+
+    </div>
+
   </div>
+
 </header>
+
+<div class="welcome-bar">
+
+  <div class="welcome-text">
+    ADMIN NEWS MANAGEMENT — CITY BOY MOVEMENT – IBAJI BRANCH
+  </div>
+
+</div>
 
 <main class="container">
 
-  <div class="notice">
-    <strong>Admin Area</strong><br>
-    You are logged in to the News Management page.
-    Enter the details of a news update below to generate a news card.
-  </div>
+  <section class="page-heading">
 
-  <section class="card">
-
-    <h2>Create News Update</h2>
-
-    <label for="headline">News Headline</label>
-
-    <input
-      type="text"
-      id="headline"
-      placeholder="Enter the news headline"
-    >
-
-    <label for="date">Date</label>
-
-    <input
-      type="date"
-      id="date"
-    >
-
-    <label for="image">Image URL</label>
-
-    <input
-      type="url"
-      id="image"
-      placeholder="https://i.ibb.co/example/image.jpg"
-    >
-
-    <label for="category">Category</label>
-
-    <input
-      type="text"
-      id="category"
-      placeholder="News, Activity, Programme, Community, etc."
-    >
-
-    <label for="story">News Story</label>
-
-    <textarea
-      id="story"
-      placeholder="Write the news story here..."
-    ></textarea>
-
-    <button
-      class="btn generate"
-      onclick="generateNews()"
-    >
-      Generate News Card
-    </button>
-
-    <button
-      class="btn clear"
-      onclick="clearForm()"
-    >
-      Clear
-    </button>
-
-    <button
-      class="btn logout"
-      onclick="logout()"
-    >
-      Logout
-    </button>
-
-  </section>
-
-  <section class="card output" id="outputBox">
-
-    <h2>Generated News Card</h2>
+    <h1>News Management</h1>
 
     <p>
-      Copy the generated code and place it inside the news section
-      of <strong>news.html</strong>.
+      Create, save, edit and remove news articles from the temporary
+      website news storage.
     </p>
-
-    <textarea
-      id="generatedCode"
-      readonly
-    ></textarea>
-
-    <button
-      class="btn copy"
-      onclick="copyCode()"
-    >
-      Copy News Code
-    </button>
-
-    <p
-      id="copyMessage"
-      style="margin-top:10px;font-weight:bold;"
-    ></p>
 
   </section>
 
-  <a class="back" href="news.html">
-    ← Back to News
-  </a>
+
+  <!-- NEWS FORM -->
+
+  <section class="form-box">
+
+    <h2 class="section-title" id="formTitle">
+      Add New News
+    </h2>
+
+    <form id="newsForm">
+
+      <input
+        type="hidden"
+        id="editId"
+        value=""
+      >
+
+      <div class="form-group">
+
+        <label for="headline">
+          Headline
+        </label>
+
+        <input
+          type="text"
+          id="headline"
+          placeholder="Enter news headline"
+          required
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="date">
+          Date
+        </label>
+
+        <input
+          type="date"
+          id="date"
+          required
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="category">
+          Category
+        </label>
+
+        <select id="category">
+
+          <option value="News">
+            News
+          </option>
+
+          <option value="Announcement">
+            Announcement
+          </option>
+
+          <option value="Activity">
+            Activity
+          </option>
+
+          <option value="Programme">
+            Programme
+          </option>
+
+          <option value="Community">
+            Community
+          </option>
+
+          <option value="Update">
+            Update
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="image">
+          Image URL
+        </label>
+
+        <input
+          type="url"
+          id="image"
+          placeholder="https://i.ibb.co/..."
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="story">
+          News Story
+        </label>
+
+        <textarea
+          id="story"
+          placeholder="Write the full news story here..."
+          required
+        ></textarea>
+
+      </div>
+
+
+      <div class="form-buttons">
+
+        <button
+          type="submit"
+          class="primary-btn"
+          id="saveBtn"
+        >
+          Save News
+        </button>
+
+        <button
+          type="button"
+          class="secondary-btn"
+          onclick="clearForm()"
+        >
+          Clear Form
+        </button>
+
+      </div>
+
+    </form>
+
+
+    <div
+      id="message"
+      class="message"
+    ></div>
+
+  </section>
+
+
+  <!-- SAVED NEWS -->
+
+  <section class="saved-box">
+
+    <h2 class="section-title">
+      Saved News
+    </h2>
+
+    <div id="savedNews"></div>
+
+  </section>
+
+
+  <div class="notice">
+
+    <strong>Temporary System:</strong>
+
+    News is currently saved in this browser using local storage.
+    It is not yet connected to an online database and does not
+    automatically modify the public GitHub Pages files.
+
+  </div>
 
 </main>
+
 
 <footer>
 
   <p>
-    <strong>CITY BOY MOVEMENT – IBAJI BRANCH</strong>
-  </p>
-
-  <p>
-    Ibaji Local Government Area, Kogi State, Nigeria
+    &copy; 2026 City Boy Movement – Ibaji Branch.
+    All rights reserved.
   </p>
 
   <p style="margin-top:10px;">
-    <a href="news.html">News</a> |
-    <a href="index.html">Home</a> |
-    <a href="contact.html">Contact</a>
-  </p>
-
-  <p style="margin-top:10px;">
-    © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
+    <a href="admin-dashboard.html">
+      Return to Admin Dashboard
+    </a>
   </p>
 
 </footer>
 
+
 <script>
 
-/* ==============================
-   ADMIN ACCESS CHECK
-============================== */
-
-if (
-  sessionStorage.getItem("cityBoyAdminLoggedIn") !== "true"
-) {
-
-  window.location.replace("admin-login.html");
-
-}
-
-
-/* ==============================
-   HTML ESCAPE
-============================== */
-
-function escapeHTML(text) {
-
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-
-}
-
-
-/* ==============================
-   GENERATE NEWS
-============================== */
-
-function generateNews() {
-
-  const headline =
-    document.getElementById("headline").value.trim();
-
-  const dateValue =
-    document.getElementById("date").value;
-
-  const image =
-    document.getElementById("image").value.trim();
-
-  const category =
-    document.getElementById("category").value.trim();
-
-  const story =
-    document.getElementById("story").value.trim();
-
+  /* =====================================
+     ADMIN ACCESS PROTECTION
+  ===================================== */
 
   if (
-    !headline ||
-    !dateValue ||
-    !image ||
-    !category ||
-    !story
+    sessionStorage.getItem("cityBoyAdminLoggedIn") !== "true"
   ) {
 
-    alert(
-      "Please complete all fields before generating the news."
-    );
-
-    return;
+    window.location.replace("admin-login.html");
 
   }
 
 
-  const date =
-    new Date(dateValue + "T00:00:00");
+  /* =====================================
+     SET TODAY'S DATE
+  ===================================== */
+
+  const today =
+    new Date().toISOString().split("T")[0];
+
+  document.getElementById("date").value = today;
 
 
-  const formattedDate =
-    date.toLocaleDateString("en-NG", {
-      day: "numeric",
-      month: "long",
-      year: "numeric"
+  /* =====================================
+     GET SAVED NEWS
+  ===================================== */
+
+  function getNews() {
+
+    return JSON.parse(
+      localStorage.getItem("cityBoyNews") || "[]"
+    );
+
+  }
+
+
+  /* =====================================
+     SAVE NEWS
+  ===================================== */
+
+  document
+    .getElementById("newsForm")
+    .addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+
+      const headline =
+        document.getElementById("headline")
+        .value
+        .trim();
+
+      const date =
+        document.getElementById("date")
+        .value;
+
+      const category =
+        document.getElementById("category")
+        .value;
+
+      const image =
+        document.getElementById("image")
+        .value
+        .trim();
+
+      const story =
+        document.getElementById("story")
+        .value
+        .trim();
+
+      const editId =
+        document.getElementById("editId")
+        .value;
+
+
+      if (!headline || !date || !story) {
+
+        showMessage(
+          "Please enter the headline, date and news story.",
+          true
+        );
+
+        return;
+
+      }
+
+
+      let news =
+        getNews();
+
+
+      if (editId) {
+
+        const index =
+          news.findIndex(function(item) {
+
+            return item.id === editId;
+
+          });
+
+
+        if (index !== -1) {
+
+          news[index] = {
+
+            ...news[index],
+
+            headline: headline,
+            date: date,
+            category: category,
+            image: image,
+            story: story
+
+          };
+
+        }
+
+
+        showMessage(
+          "News article updated successfully."
+        );
+
+      } else {
+
+        const article = {
+
+          id:
+            "NEWS-" +
+            Date.now().toString().slice(-8),
+
+          headline: headline,
+
+          date: date,
+
+          category: category,
+
+          image: image,
+
+          story: story,
+
+          createdAt:
+            new Date().toLocaleString()
+
+        };
+
+
+        news.push(article);
+
+
+        showMessage(
+          "News article saved successfully."
+        );
+
+      }
+
+
+      localStorage.setItem(
+        "cityBoyNews",
+        JSON.stringify(news)
+      );
+
+
+      clearForm(false);
+
+      displayNews();
+
     });
 
 
-  const safeHeadline =
-    escapeHTML(headline);
+  /* =====================================
+     DISPLAY NEWS
+  ===================================== */
 
-  const safeCategory =
-    escapeHTML(category);
+  function displayNews() {
 
-  const safeStory =
-    escapeHTML(story);
+    const news =
+      getNews();
+
+    const container =
+      document.getElementById("savedNews");
 
 
-  const whatsappText =
-    encodeURIComponent(
-      headline +
-      " - City Boy Movement – Ibaji Branch"
+    if (news.length === 0) {
+
+      container.innerHTML = `
+
+        <div class="empty">
+
+          <h3>No News Saved Yet</h3>
+
+          <p>
+            Use the form above to create your first
+            news article.
+          </p>
+
+        </div>
+
+      `;
+
+      return;
+
+    }
+
+
+    container.innerHTML = "";
+
+
+    news
+      .slice()
+      .reverse()
+      .forEach(function(article) {
+
+
+        const card =
+          document.createElement("div");
+
+        card.className =
+          "saved-news";
+
+
+        let imageHTML = "";
+
+        if (article.image) {
+
+          imageHTML = `
+
+            <img
+              src="${escapeHTML(article.image)}"
+              class="news-image"
+              alt="${escapeHTML(article.headline)}"
+              onerror="this.style.display='none';"
+            >
+
+          `;
+
+        }
+
+
+        card.innerHTML = `
+
+          <h3>
+            ${escapeHTML(article.headline)}
+          </h3>
+
+          <div class="news-meta">
+
+            ${escapeHTML(article.category)}
+            &nbsp; • &nbsp;
+            ${escapeHTML(formatDate(article.date))}
+            &nbsp; • &nbsp;
+            ${escapeHTML(article.id)}
+
+          </div>
+
+          ${imageHTML}
+
+          <div class="story-preview">
+            ${escapeHTML(article.story)}
+          </div>
+
+          <div class="article-actions">
+
+            <button
+              class="edit-btn"
+              onclick="editNews('${article.id}')"
+            >
+              Edit
+            </button>
+
+            <button
+              class="delete-btn"
+              onclick="deleteNews('${article.id}')"
+            >
+              Delete
+            </button>
+
+          </div>
+
+        `;
+
+
+        container.appendChild(card);
+
+      });
+
+  }
+
+
+  /* =====================================
+     EDIT NEWS
+  ===================================== */
+
+  function editNews(id) {
+
+    const news =
+      getNews();
+
+
+    const article =
+      news.find(function(item) {
+
+        return item.id === id;
+
+      });
+
+
+    if (!article) {
+
+      return;
+
+    }
+
+
+    document.getElementById("editId").value =
+      article.id;
+
+    document.getElementById("headline").value =
+      article.headline;
+
+    document.getElementById("date").value =
+      article.date;
+
+    document.getElementById("category").value =
+      article.category;
+
+    document.getElementById("image").value =
+      article.image || "";
+
+    document.getElementById("story").value =
+      article.story;
+
+
+    document.getElementById("formTitle").textContent =
+      "Edit News Article";
+
+    document.getElementById("saveBtn").textContent =
+      "Update News";
+
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+
+  }
+
+
+  /* =====================================
+     DELETE NEWS
+  ===================================== */
+
+  function deleteNews(id) {
+
+    const confirmed =
+      confirm(
+        "Are you sure you want to delete this news article?"
+      );
+
+
+    if (!confirmed) {
+
+      return;
+
+    }
+
+
+    let news =
+      getNews();
+
+
+    news =
+      news.filter(function(article) {
+
+        return article.id !== id;
+
+      });
+
+
+    localStorage.setItem(
+      "cityBoyNews",
+      JSON.stringify(news)
     );
 
 
-  const code = `
-<!-- NEWS ITEM START -->
-
-<article class="news-card">
-
-  <img
-    src="${image}"
-    alt="${safeHeadline}"
-    loading="lazy"
-  >
-
-  <div class="news-content">
-
-    <span class="category">
-      ${safeCategory}
-    </span>
-
-    <div class="date">
-      ${formattedDate}
-    </div>
-
-    <h3>
-      ${safeHeadline}
-    </h3>
-
-    <p>
-      ${safeStory}
-    </p>
-
-    <a
-      class="whatsapp-btn"
-      href="https://wa.me/?text=${whatsappText}"
-      target="_blank"
-      rel="noopener"
-    >
-      Share on WhatsApp
-    </a>
-
-  </div>
-
-</article>
-
-<!-- NEWS ITEM END -->
-`;
+    displayNews();
 
 
-  document.getElementById(
-    "generatedCode"
-  ).value = code.trim();
+    showMessage(
+      "News article deleted."
+    );
+
+  }
 
 
-  document.getElementById(
-    "outputBox"
-  ).style.display = "block";
+  /* =====================================
+     CLEAR FORM
+  ===================================== */
+
+  function clearForm(showMessageBox = true) {
+
+    document.getElementById("newsForm").reset();
+
+    document.getElementById("editId").value =
+      "";
+
+    document.getElementById("date").value =
+      today;
+
+    document.getElementById("formTitle").textContent =
+      "Add New News";
+
+    document.getElementById("saveBtn").textContent =
+      "Save News";
 
 
-  window.scrollTo({
-    top:
-      document.getElementById(
-        "outputBox"
-      ).offsetTop - 20,
+    if (showMessageBox) {
 
-    behavior: "smooth"
-  });
+      showMessage(
+        "Form cleared."
+      );
 
-}
+    }
+
+  }
 
 
-/* ==============================
-   COPY CODE
-============================== */
+  /* =====================================
+     MESSAGE
+  ===================================== */
 
-function copyCode() {
+  function showMessage(text, error = false) {
 
-  const codeBox =
-    document.getElementById(
-      "generatedCode"
+    const box =
+      document.getElementById("message");
+
+
+    box.textContent =
+      text;
+
+    box.style.display =
+      "block";
+
+
+    if (error) {
+
+      box.style.background =
+        "#ffe8e8";
+
+      box.style.color =
+        "#b00020";
+
+    } else {
+
+      box.style.background =
+        "#e7f8ea";
+
+      box.style.color =
+        "#087f23";
+
+    }
+
+
+    setTimeout(function() {
+
+      box.style.display =
+        "none";
+
+    }, 3500);
+
+  }
+
+
+  /* =====================================
+     FORMAT DATE
+  ===================================== */
+
+  function formatDate(value) {
+
+    if (!value) {
+
+      return "";
+
+    }
+
+
+    const parts =
+      value.split("-");
+
+
+    if (parts.length !== 3) {
+
+      return value;
+
+    }
+
+
+    return parts[2] + "/" +
+           parts[1] + "/" +
+           parts[0];
+
+  }
+
+
+  /* =====================================
+     HTML ESCAPE
+  ===================================== */
+
+  function escapeHTML(value) {
+
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+
+  }
+
+
+  /* =====================================
+     LOGOUT
+  ===================================== */
+
+  function logout() {
+
+    const confirmed =
+      confirm(
+        "Are you sure you want to log out?"
+      );
+
+
+    if (!confirmed) {
+
+      return;
+
+    }
+
+
+    sessionStorage.removeItem(
+      "cityBoyAdminLoggedIn"
     );
 
 
-  navigator.clipboard.writeText(
-    codeBox.value
-  )
+    window.location.href =
+      "admin-login.html";
 
-  .then(function() {
-
-    document.getElementById(
-      "copyMessage"
-    ).textContent =
-      "News code copied successfully.";
-
-  })
-
-  .catch(function() {
-
-    codeBox.select();
-
-    document.execCommand("copy");
-
-    document.getElementById(
-      "copyMessage"
-    ).textContent =
-      "News code copied successfully.";
-
-  });
-
-}
+  }
 
 
-/* ==============================
-   CLEAR FORM
-============================== */
+  /* =====================================
+     INITIAL LOAD
+  ===================================== */
 
-function clearForm() {
-
-  document.getElementById(
-    "headline"
-  ).value = "";
-
-  document.getElementById(
-    "date"
-  ).value = "";
-
-  document.getElementById(
-    "image"
-  ).value = "";
-
-  document.getElementById(
-    "category"
-  ).value = "";
-
-  document.getElementById(
-    "story"
-  ).value = "";
-
-  document.getElementById(
-    "outputBox"
-  ).style.display = "none";
-
-  document.getElementById(
-    "generatedCode"
-  ).value = "";
-
-  document.getElementById(
-    "copyMessage"
-  ).textContent = "";
-
-}
-
-
-/* ==============================
-   LOGOUT
-============================== */
-
-function logout() {
-
-  sessionStorage.removeItem(
-    "cityBoyAdminLoggedIn"
-  );
-
-  window.location.href =
-    "admin-login.html";
-
-}
+  displayNews();
 
 </script>
 
