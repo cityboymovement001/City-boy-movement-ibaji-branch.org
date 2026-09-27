@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Membership Registration | City Boy Movement – Ibaji Branch</title>
-
   <meta name="description" content="Register your interest in joining City Boy Movement – Ibaji Branch.">
-  <meta name="theme-color" content="#087f23">
 
   <style>
     * {
@@ -17,8 +15,8 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5fff7;
+      font-family: Arial, sans-serif;
+      background: #f4f8f4;
       color: #222;
       line-height: 1.6;
     }
@@ -26,53 +24,44 @@
     header {
       background: #087f23;
       color: white;
-      padding: 15px 5%;
+      padding: 15px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     .header-inner {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 15px;
     }
 
     .logo {
-      font-size: 19px;
       font-weight: bold;
-      line-height: 1.2;
-    }
-
-    .logo span {
-      display: block;
-      color: #ffd700;
-      font-size: 13px;
-      margin-top: 3px;
+      font-size: 18px;
     }
 
     nav {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-end;
+      justify-content: center;
       gap: 8px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-      padding: 7px 8px;
+      padding: 7px 9px;
       border-radius: 5px;
+      font-size: 13px;
     }
 
     nav a:hover {
-      background: #005c1a;
+      background: rgba(255,255,255,0.18);
     }
 
     .welcome-bar {
@@ -90,13 +79,13 @@
       display: inline-block;
       padding-left: 100%;
       animation: welcomeMove 18s linear infinite;
-      animation-delay: 2s;
     }
 
     @keyframes welcomeMove {
       from {
         transform: translateX(0);
       }
+
       to {
         transform: translateX(-100%);
       }
@@ -110,48 +99,40 @@
     }
 
     .hero h1 {
-      font-size: 40px;
+      font-size: 34px;
       margin-bottom: 12px;
     }
 
     .hero p {
-      max-width: 760px;
+      max-width: 750px;
       margin: auto;
-      font-size: 18px;
+      font-size: 17px;
     }
 
     .container {
-      width: 92%;
-      max-width: 850px;
-      margin: 45px auto;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    .intro-box {
+    .intro {
       background: white;
-      padding: 30px;
+      padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
       margin-bottom: 25px;
-      text-align: center;
     }
 
-    .intro-box h2 {
+    .intro h2 {
       color: #087f23;
       margin-bottom: 10px;
     }
 
     .form-box {
       background: white;
-      padding: 35px;
-      border-radius: 14px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.09);
-      border-top: 5px solid #087f23;
-    }
-
-    .form-box h2 {
-      text-align: center;
-      color: #087f23;
-      margin-bottom: 25px;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
     }
 
     .form-group {
@@ -162,11 +143,7 @@
       display: block;
       font-weight: bold;
       margin-bottom: 7px;
-      color: #333;
-    }
-
-    .required {
-      color: #d00000;
+      color: #063d15;
     }
 
     input,
@@ -178,7 +155,6 @@
       border-radius: 7px;
       font-size: 15px;
       font-family: inherit;
-      background: #fff;
     }
 
     input:focus,
@@ -194,18 +170,23 @@
       resize: vertical;
     }
 
-    .notice {
-      background: #fff9d9;
+    .required {
+      color: red;
+    }
+
+    .privacy-note {
+      background: #fff8d9;
       border-left: 5px solid #ffd700;
       padding: 15px;
       margin: 20px 0;
+      border-radius: 6px;
       font-size: 14px;
     }
 
     .consent {
       display: flex;
-      gap: 10px;
       align-items: flex-start;
+      gap: 10px;
       margin: 20px 0;
       font-size: 14px;
     }
@@ -218,10 +199,10 @@
     .submit-btn {
       width: 100%;
       border: none;
-      padding: 15px;
-      border-radius: 7px;
       background: #087f23;
       color: white;
+      padding: 15px;
+      border-radius: 7px;
       font-size: 17px;
       font-weight: bold;
       cursor: pointer;
@@ -231,67 +212,46 @@
       background: #005c1a;
     }
 
-    .whatsapp-box {
+    #successBox {
       display: none;
+      background: #e7f8ea;
+      border: 2px solid #087f23;
+      padding: 22px;
       margin-top: 25px;
-      background: #eaffef;
-      border: 1px solid #b9e6c2;
       border-radius: 10px;
-      padding: 20px;
-      text-align: center;
     }
 
-    .whatsapp-box h3 {
+    #successBox h3 {
       color: #087f23;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+    }
+
+    .registration-id {
+      background: white;
+      padding: 10px;
+      margin: 12px 0;
+      border-radius: 6px;
+      font-weight: bold;
+      color: #005c1a;
     }
 
     .whatsapp-btn {
       display: inline-block;
-      margin-top: 12px;
-      background: #087f23;
+      background: #25D366;
       color: white;
-      padding: 12px 20px;
-      border-radius: 7px;
       text-decoration: none;
-      font-weight: bold;
-    }
-
-    .quick-links {
-      margin-top: 40px;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-    }
-
-    .quick-links h2 {
-      text-align: center;
-      color: #087f23;
-      margin-bottom: 20px;
-    }
-
-    .quick-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .quick-grid a {
-      background: #f0fff3;
-      color: #087f23;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 12px 8px;
-      text-align: center;
+      padding: 13px 18px;
       border-radius: 7px;
-      border: 1px solid #d5efd9;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .notice {
+      margin-top: 25px;
+      padding: 18px;
+      background: #eef8ef;
+      border-radius: 8px;
       font-size: 14px;
-    }
-
-    .quick-grid a:hover {
-      background: #087f23;
-      color: white;
     }
 
     footer {
@@ -302,11 +262,11 @@
       margin-top: 50px;
     }
 
-    footer p {
-      margin-bottom: 10px;
+    .footer-links {
+      margin: 15px 0;
     }
 
-    footer a {
+    .footer-links a {
       color: #ffd700;
       text-decoration: none;
       margin: 0 7px;
@@ -315,42 +275,27 @@
 
     .admin-link {
       display: inline-block;
-      margin-top: 10px;
-      color: #b7d9bd;
-      font-size: 11px;
-      opacity: 0.75;
+      margin-top: 18px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 12px;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 700px) {
       .header-inner {
         flex-direction: column;
-        text-align: center;
       }
 
-      nav {
-        justify-content: center;
+      nav a {
+        font-size: 12px;
       }
 
-      .quick-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 520px) {
       .hero h1 {
-        font-size: 30px;
-      }
-
-      .hero p {
-        font-size: 16px;
+        font-size: 28px;
       }
 
       .form-box {
-        padding: 24px 18px;
-      }
-
-      .quick-grid {
-        grid-template-columns: 1fr;
+        padding: 20px;
       }
     }
   </style>
@@ -362,8 +307,7 @@
   <div class="header-inner">
 
     <div class="logo">
-      CITY BOY MOVEMENT
-      <span>IBAJI BRANCH</span>
+      CITY BOY MOVEMENT – IBAJI BRANCH
     </div>
 
     <nav>
@@ -390,7 +334,6 @@
 
 <section class="hero">
   <h1>Membership Registration</h1>
-
   <p>
     Register your interest in joining City Boy Movement – Ibaji Branch.
   </p>
@@ -398,116 +341,91 @@
 
 <main class="container">
 
-  <div class="intro-box">
-
+  <section class="intro">
     <h2>Join the Movement</h2>
-
     <p>
-      Complete the registration form below. Your information will be
-      used to process your membership enquiry and to contact you
-      regarding relevant branch information.
+      Complete the form below to register your interest in participating
+      in activities and programmes of City Boy Movement – Ibaji Branch.
     </p>
+  </section>
 
-  </div>
-
-  <div class="form-box">
-
-    <h2>Member Registration Form</h2>
+  <section class="form-box">
 
     <form id="membershipForm">
 
       <div class="form-group">
-        <label for="fullname">
+        <label>
           Full Name <span class="required">*</span>
         </label>
 
         <input
           type="text"
-          id="fullname"
-          name="fullname"
+          id="fullName"
           placeholder="Enter your full name"
           required
         >
       </div>
 
       <div class="form-group">
-        <label for="phone">
+        <label>
           Phone Number <span class="required">*</span>
         </label>
 
         <input
           type="tel"
           id="phone"
-          name="phone"
-          placeholder="e.g. 08012345678"
+          placeholder="Enter your phone number"
           required
         >
       </div>
 
       <div class="form-group">
-        <label for="email">
-          Email Address
-        </label>
+        <label>Email Address</label>
 
         <input
           type="email"
           id="email"
-          name="email"
           placeholder="Enter your email address"
         >
       </div>
 
       <div class="form-group">
-        <label for="lga">
+        <label>
           Local Government Area <span class="required">*</span>
         </label>
 
         <input
           type="text"
           id="lga"
-          name="lga"
           value="Ibaji Local Government Area"
           required
         >
       </div>
 
       <div class="form-group">
-        <label for="community">
-          Ward / Community
-        </label>
+        <label>Ward / Community</label>
 
         <input
           type="text"
-          id="community"
-          name="community"
+          id="ward"
           placeholder="Enter your ward or community"
         >
       </div>
 
       <div class="form-group">
-        <label for="occupation">
-          Occupation
-        </label>
+        <label>Occupation</label>
 
         <input
           type="text"
           id="occupation"
-          name="occupation"
           placeholder="Enter your occupation"
         >
       </div>
 
       <div class="form-group">
-        <label for="participation">
-          How would you like to participate?
-        </label>
+        <label>How would you like to participate?</label>
 
-        <select id="participation" name="participation">
-
-          <option value="">
-            Select an option
-          </option>
-
+        <select id="participation">
           <option value="Community Activities">
             Community Activities
           </option>
@@ -527,66 +445,61 @@
           <option value="General Participation">
             General Participation
           </option>
-
         </select>
       </div>
 
       <div class="form-group">
-        <label for="message">
-          Additional Information
-        </label>
+        <label>Additional Information</label>
 
         <textarea
-          id="message"
-          name="message"
-          placeholder="Enter any additional information you would like to provide"
+          id="additional"
+          placeholder="Anything else you would like us to know?"
         ></textarea>
       </div>
 
-      <div class="notice">
-        <strong>Privacy Notice:</strong>
-        Please provide only information necessary for your membership
-        enquiry. Do not submit passwords, financial information or
-        other highly sensitive information through this form.
+      <div class="privacy-note">
+        <strong>Privacy Notice:</strong><br>
+        Please do not submit passwords, bank details, financial information
+        or highly sensitive personal information through this form.
       </div>
 
       <label class="consent">
-
-        <input
-          type="checkbox"
-          id="consent"
-          required
-        >
+        <input type="checkbox" id="consent" required>
 
         <span>
-          I confirm that the information I have provided is accurate
-          and I am submitting this form voluntarily.
+          I confirm that the information provided is accurate and I agree
+          to submit this membership registration.
         </span>
-
       </label>
 
-      <button
-        type="submit"
-        class="submit-btn"
-      >
-        Continue to WhatsApp
+      <button type="submit" class="submit-btn">
+        Submit Membership Registration
       </button>
 
     </form>
 
-    <div class="whatsapp-box" id="whatsappBox">
+    <div id="successBox">
 
-      <h3>Registration Information Ready</h3>
+      <h3>Registration Successful</h3>
 
       <p>
-        Tap the button below to send your membership registration
-        information through WhatsApp.
+        Your membership registration has been saved on this device.
+      </p>
+
+      <div class="registration-id">
+        Registration ID:
+        <span id="registrationId"></span>
+      </div>
+
+      <p>
+        You may also send your registration details to the branch through
+        WhatsApp.
       </p>
 
       <a
-        href="#"
-        id="whatsappButton"
+        id="whatsappLink"
         class="whatsapp-btn"
+        href="#"
         target="_blank"
       >
         Send Registration on WhatsApp
@@ -594,123 +507,150 @@
 
     </div>
 
-  </div>
-
-  <div class="quick-links">
-
-    <h2>Quick Links</h2>
-
-    <div class="quick-grid">
-
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="activities.html">Activities</a>
-      <a href="news.html">News</a>
-      <a href="events.html">Events</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="membership.html">Membership</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
-
+    <div class="notice">
+      <strong>Important:</strong>
+      This website currently stores registration information locally in
+      the browser. A secure online database can be connected later so
+      authorized administrators can access registrations from different
+      devices.
     </div>
 
-  </div>
+  </section>
 
 </main>
 
 <footer>
 
   <p>
-    <strong>CITY BOY MOVEMENT – IBAJI BRANCH</strong>
+    &copy; 2026 City Boy Movement – Ibaji Branch.
+    All rights reserved.
   </p>
 
-  <p>
-    Ibaji Local Government Area, Kogi State, Nigeria
-  </p>
-
-  <p>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="activities.html">Activities</a>
-    <a href="news.html">News</a>
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
     <a href="contact.html">Contact</a>
-  </p>
+  </div>
 
-  <p>
-    © 2026 City Boy Movement – Ibaji Branch. All rights reserved.
-  </p>
-
-  <a
-    href="admin-login.html"
-    class="admin-link"
-  >
+  <a href="admin-login.html" class="admin-link">
     🔐 Admin Login
   </a>
 
 </footer>
 
 <script>
-  document.getElementById("membershipForm").addEventListener("submit", function(event) {
 
-    event.preventDefault();
+document.getElementById("membershipForm").addEventListener("submit", function(event) {
 
-    const fullname =
-      document.getElementById("fullname").value.trim();
+  event.preventDefault();
 
-    const phone =
-      document.getElementById("phone").value.trim();
+  const fullName =
+    document.getElementById("fullName").value.trim();
 
-    const email =
-      document.getElementById("email").value.trim();
+  const phone =
+    document.getElementById("phone").value.trim();
 
-    const lga =
-      document.getElementById("lga").value.trim();
+  const email =
+    document.getElementById("email").value.trim();
 
-    const community =
-      document.getElementById("community").value.trim();
+  const lga =
+    document.getElementById("lga").value.trim();
 
-    const occupation =
-      document.getElementById("occupation").value.trim();
+  const ward =
+    document.getElementById("ward").value.trim();
 
-    const participation =
-      document.getElementById("participation").value;
+  const occupation =
+    document.getElementById("occupation").value.trim();
 
-    const message =
-      document.getElementById("message").value.trim();
+  const participation =
+    document.getElementById("participation").value;
 
-    const whatsappNumber = "2347031992677";
+  const additional =
+    document.getElementById("additional").value.trim();
 
-    const text =
-      "MEMBERSHIP REGISTRATION – CITY BOY MOVEMENT – IBAJI BRANCH\n\n" +
-      "Full Name: " + fullname + "\n" +
-      "Phone Number: " + phone + "\n" +
-      "Email: " + (email || "Not provided") + "\n" +
-      "LGA: " + lga + "\n" +
-      "Ward / Community: " + (community || "Not provided") + "\n" +
-      "Occupation: " + (occupation || "Not provided") + "\n" +
-      "Preferred Participation: " + (participation || "Not specified") + "\n" +
-      "Additional Information: " + (message || "None") + "\n\n" +
-      "I would like to register my interest in joining the movement.";
+  const registrationId =
+    "CBM-" +
+    Date.now().toString().slice(-8);
 
-    const whatsappURL =
-      "https://wa.me/" +
-      whatsappNumber +
-      "?text=" +
-      encodeURIComponent(text);
+  const registration = {
 
-    document.getElementById("whatsappButton").href = whatsappURL;
+    id: registrationId,
 
-    document.getElementById("whatsappBox").style.display = "block";
+    fullName: fullName,
 
-    document.getElementById("whatsappBox").scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
+    phone: phone,
 
+    email: email,
+
+    lga: lga,
+
+    ward: ward,
+
+    occupation: occupation,
+
+    participation: participation,
+
+    additional: additional,
+
+    date: new Date().toLocaleString()
+
+  };
+
+  let registrations =
+    JSON.parse(
+      localStorage.getItem("cityBoyMemberships") || "[]"
+    );
+
+  registrations.push(registration);
+
+  localStorage.setItem(
+    "cityBoyMemberships",
+    JSON.stringify(registrations)
+  );
+
+  document.getElementById("registrationId").textContent =
+    registrationId;
+
+  const message =
+`CITY BOY MOVEMENT – IBAJI BRANCH
+
+NEW MEMBERSHIP REGISTRATION
+
+Registration ID: ${registrationId}
+
+Full Name: ${fullName}
+Phone: ${phone}
+Email: ${email || "Not provided"}
+LGA: ${lga}
+Ward / Community: ${ward || "Not provided"}
+Occupation: ${occupation || "Not provided"}
+Participation: ${participation}
+
+Additional Information:
+${additional || "None"}
+
+I would like to register my interest in joining the movement.`;
+
+  const whatsappURL =
+    "https://wa.me/2347031992677?text=" +
+    encodeURIComponent(message);
+
+  document.getElementById("whatsappLink").href =
+    whatsappURL;
+
+  document.getElementById("successBox").style.display =
+    "block";
+
+  document.getElementById("membershipForm").style.display =
+    "none";
+
+  window.scrollTo({
+    top: document.getElementById("successBox").offsetTop - 30,
+    behavior: "smooth"
   });
+
+});
+
 </script>
 
 </body>
