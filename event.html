@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Events | City Boy Movement – Ibaji Branch</title>
+
+  <meta name="description" content="Upcoming and past events of City Boy Movement – Ibaji Branch.">
+
+  <meta name="theme-color" content="#087f23">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f8f5;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #087f23, #005c1a);
+      color: white;
+      padding: 15px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 12px;
+      color: #ffd700;
+      margin-top: 2px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 17px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .welcome-bar {
+      width: 100%;
+      overflow: hidden;
+      background: #ffd700;
+      color: #063d15;
+      padding: 11px 0;
+      white-space: nowrap;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .welcome-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: welcomeMove 18s linear infinite;
+      animation-delay: 2s;
+    }
+
+    @keyframes welcomeMove {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(0,70,20,0.78), rgba(0,70,20,0.78)),
+        url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(35px, 6vw, 58px);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: clamp(17px, 3vw, 23px);
+    }
+
+    .gold-line {
+      width: 90px;
+      height: 4px;
+      background: #ffd700;
+      margin: 15px auto;
+      border-radius: 10px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #087f23;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .section-intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      color: #555;
+    }
+
+    .events {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 25px;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      border-top: 5px solid #087f23;
+    }
+
+    .event-date {
+      background: #087f23;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .event-date .day {
+      display: block;
+      font-size: 35px;
+      font-weight: bold;
+      color: #ffd700;
+    }
+
+    .event-date .month {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .event-content {
+      padding: 25px;
+    }
+
+    .event-content h3 {
+      color: #087f23;
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .event-content p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .event-tag {
+      display: inline-block;
+      background: #e8f5e9;
+      color: #087f23;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    .notice {
+      background: linear-gradient(135deg, #087f23, #005c1a);
+      color: white;
+      padding: 40px 25px;
+      border-radius: 18px;
+      text-align: center;
+      margin-top: 45px;
+    }
+
+    .notice h2 {
+      color: #ffd700;
+      margin-bottom: 12px;
+    }
+
+    footer {
+      background: #063d15;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer h3 {
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #ddd;
+      margin: 6px 0;
+    }
+
+    .copyright {
+      margin-top: 22px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 13px;
+      color: #ccc;
+    }
+
+    @media (max-width: 800px) {
+
+      header {
+        position: relative;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav-container">
+
+    <div class="logo">
+      CITY BOY MOVEMENT
+      <span>IBAJI BRANCH</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="activities.html">Activities</a>
+      <a href="news.html">News</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<div class="welcome-bar">
+  <div class="welcome-text">
+    WELCOME TO CITY BOY MOVEMENT – IBAJI BRANCH. Please connect with us for updates, activities, programmes and information from the movement. — MANAGEMENT
+  </div>
+</div>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>Events & Programmes</h1>
+
+    <div class="gold-line"></div>
+
+    <p>
+      City Boy Movement – Ibaji Branch
+    </p>
+
+    <p>
+      Meetings, programmes, community activities and branch events.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="container">
+
+  <h2 class="section-title">
+    Our Events
+  </h2>
+
+  <p class="section-intro">
+    This page provides information about branch meetings,
+    community activities, programmes and other events.
+  </p>
+
+  <div class="events">
+
+    <div class="event-card">
+
+      <div class="event-date">
+        <span class="day">01</span>
+        <span class="month">Upcoming</span>
+      </div>
+
+      <div class="event-content">
+
+        <h3>Branch Meeting</h3>
+
+        <p>
+          A meeting for members and supporters to discuss
+          branch activities, coordination and upcoming programmes.
+        </p>
+
+        <span class="event-tag">
+          Branch Activity
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        <span class="day">02</span>
+        <span class="month">Programme</span>
+      </div>
+
+      <div class="event-content">
+
+        <h3>Community Engagement</h3>
+
+        <p>
+          Community engagement activities designed to encourage
+          communication and participation across Ibaji communities.
+        </p>
+
+        <span class="event-tag">
+          Community
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        <span class="day">03</span>
+        <span class="month">Activity</span>
+      </div>
+
+      <div class="event-content">
+
+        <h3>Youth Engagement</h3>
+
+        <p>
+          Activities and discussions encouraging young people
+          to participate in civic and community programmes.
+        </p>
+
+        <span class="event-tag">
+          Youth
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="event-card">
+
+      <div class="event-date">
+        <span class="day">04</span>
+        <span class="month">Meeting</span>
+      </div>
+
+      <div class="event-content">
+
+        <h3>Members Coordination Meeting</h3>
+
+        <p>
+          A platform for members to share information,
+          coordinate activities and discuss branch programmes.
+        </p>
+
+        <span class="event-tag">
+          Members
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="notice">
+
+    <h2>Event Updates</h2>
+
+    <p>
+      Official dates, venues and programme details will be
+      published on this website when they are confirmed.
+    </p>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <h3>
+    CITY BOY MOVEMENT – IBAJI BRANCH
+  </h3>
+
+  <p>
+    Ibaji Local Government Area, Kogi State, Nigeria
+  </p>
+
+  <p>
+    Grassroots Organization • Community Engagement • Civic Participation
+  </p>
+
+  <div class="copyright">
+    © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
+  </div>
+
+</footer>
+
+</body>
+</html>
