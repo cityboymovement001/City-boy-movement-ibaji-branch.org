@@ -4,65 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Terms & Conditions | City Boy Movement – Ibaji Branch</title>
+  <title>Terms of Use | City Boy Movement – Ibaji Branch</title>
 
-  <meta name="description" content="Terms and Conditions for City Boy Movement – Ibaji Branch.">
-
+  <meta name="description" content="Terms of Use for the City Boy Movement – Ibaji Branch website.">
   <meta name="theme-color" content="#087f23">
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f8f5;
+      background: #f5fff7;
       color: #222;
       line-height: 1.7;
     }
 
+    /* HEADER */
     header {
-      background: linear-gradient(135deg, #087f23, #005c1a);
+      background: #087f23;
       color: white;
-      padding: 15px 5%;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      padding: 15px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     .logo {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: bold;
+      color: #ffd700;
+      margin-bottom: 10px;
     }
 
-    .logo span {
-      display: block;
-      font-size: 12px;
-      color: #ffd700;
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 14px;
-      font-size: 14px;
+      padding: 7px 9px;
+      border-radius: 5px;
+      font-size: 13px;
       font-weight: bold;
     }
 
-    nav a:hover {
-      color: #ffd700;
+    nav a:hover,
+    nav a.active {
+      background: #ffd700;
+      color: #063d15;
     }
 
-    /* WELCOME BAR */
+    /* WELCOME MARQUEE */
     .welcome-bar {
       width: 100%;
       overflow: hidden;
@@ -93,69 +95,75 @@
 
     /* HERO */
     .hero {
-      background: linear-gradient(135deg, #087f23, #005c1a);
+      background: linear-gradient(
+        rgba(0, 92, 26, 0.92),
+        rgba(8, 127, 35, 0.92)
+      );
       color: white;
       text-align: center;
-      padding: 70px 20px;
+      padding: 65px 20px;
     }
 
     .hero h1 {
-      font-size: clamp(35px, 6vw, 55px);
-      margin-bottom: 15px;
-    }
-
-    .gold-line {
-      width: 90px;
-      height: 4px;
-      background: #ffd700;
-      margin: 15px auto;
-      border-radius: 10px;
+      font-size: 38px;
+      margin-bottom: 12px;
     }
 
     .hero p {
-      font-size: 18px;
+      max-width: 720px;
+      margin: auto;
+      font-size: 16px;
     }
 
     /* CONTENT */
     .container {
-      max-width: 1000px;
+      max-width: 950px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 45px 20px;
+    }
+
+    .updated {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 30px;
     }
 
     .terms-card {
       background: white;
-      padding: 35px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      margin-bottom: 25px;
+      padding: 30px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+      border-left: 4px solid #087f23;
     }
 
     .terms-card h2 {
       color: #087f23;
       margin-bottom: 12px;
-      font-size: 25px;
+      font-size: 23px;
     }
 
     .terms-card p {
       color: #555;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .terms-card ul {
-      padding-left: 25px;
+      margin: 10px 0 10px 22px;
       color: #555;
     }
 
     .terms-card li {
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
+    /* NOTICE */
     .notice {
-      background: #fff8d6;
+      background: #fffbea;
       border-left: 5px solid #ffd700;
       padding: 20px;
-      margin-bottom: 30px;
+      margin-top: 25px;
       border-radius: 8px;
     }
 
@@ -163,85 +171,133 @@
       color: #087f23;
     }
 
+    /* CONTACT BOX */
+    .contact-box {
+      background: #087f23;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+      border-radius: 14px;
+      margin-top: 35px;
+    }
+
+    .contact-box h2 {
+      color: #ffd700;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ffd700;
+      color: #063d15;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 7px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: white;
+    }
+
+    /* QUICK LINKS */
+    .quick-links {
+      max-width: 900px;
+      margin: 35px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 12px;
+    }
+
+    .quick-links a {
+      display: block;
+      background: #087f23;
+      color: white;
+      text-decoration: none;
+      padding: 12px 8px;
+      border-radius: 7px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .quick-links a:hover {
+      background: #005c1a;
+    }
+
     /* FOOTER */
     footer {
       background: #063d15;
       color: white;
-      padding: 40px 20px;
       text-align: center;
-    }
-
-    footer h3 {
-      color: #ffd700;
-      margin-bottom: 10px;
+      padding: 30px 20px;
+      margin-top: 40px;
     }
 
     footer p {
-      color: #ddd;
       margin: 6px 0;
-    }
-
-    .footer-links {
-      margin: 20px 0;
-    }
-
-    .footer-links a {
-      color: white;
-      text-decoration: none;
-      margin: 0 8px;
       font-size: 14px;
     }
 
-    .footer-links a:hover {
+    footer a {
       color: #ffd700;
+      text-decoration: none;
     }
 
-    .copyright {
-      margin-top: 22px;
-      padding-top: 15px;
-      border-top: 1px solid rgba(255,255,255,0.2);
+    .footer-links {
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      margin: 0 6px;
       font-size: 13px;
-      color: #ccc;
     }
 
     /* MOBILE */
-    @media (max-width: 850px) {
+    @media (max-width: 600px) {
 
-      .nav-container {
-        flex-direction: column;
-        gap: 15px;
+      .hero {
+        padding: 55px 18px;
       }
 
-      nav {
-        text-align: center;
+      .hero h1 {
+        font-size: 30px;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 5px 6px;
+      .hero p {
+        font-size: 15px;
       }
 
       .terms-card {
-        padding: 25px 20px;
+        padding: 23px 18px;
       }
 
-      .hero {
-        padding: 55px 20px;
+      .terms-card h2 {
+        font-size: 20px;
       }
+
+      nav a {
+        font-size: 12px;
+        padding: 6px 7px;
+      }
+
     }
   </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-
-  <div class="nav-container">
+  <!-- HEADER -->
+  <header>
 
     <div class="logo">
-      CITY BOY MOVEMENT
-      <span>IBAJI BRANCH</span>
+      CITY BOY MOVEMENT – IBAJI BRANCH
     </div>
 
     <nav>
@@ -253,219 +309,260 @@
       <a href="events.html">Events</a>
       <a href="gallery.html">Gallery</a>
       <a href="membership.html">Membership</a>
+      <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
     </nav>
 
-  </div>
+  </header>
 
-</header>
+  <!-- WELCOME MARQUEE -->
+  <div class="welcome-bar">
 
-
-<!-- WELCOME -->
-<div class="welcome-bar">
-  <div class="welcome-text">
-    WELCOME TO CITY BOY MOVEMENT – IBAJI BRANCH. Please connect with us for updates, activities, programmes and information from the movement. — MANAGEMENT
-  </div>
-</div>
-
-
-<!-- HERO -->
-<section class="hero">
-
-  <h1>Terms & Conditions</h1>
-
-  <div class="gold-line"></div>
-
-  <p>
-    City Boy Movement – Ibaji Branch
-  </p>
-
-</section>
-
-
-<!-- CONTENT -->
-<main class="container">
-
-  <div class="notice">
-    <strong>Important:</strong>
-    By using this website, visitors are expected to use
-    the website responsibly and respectfully.
-  </div>
-
-
-  <div class="terms-card">
-
-    <h2>1. About This Website</h2>
-
-    <p>
-      This website provides information about City Boy Movement –
-      Ibaji Branch, including activities, programmes, events,
-      announcements, membership information and other
-      published updates.
-    </p>
+    <div class="welcome-text">
+      WELCOME TO CITY BOY MOVEMENT – IBAJI BRANCH. Please connect with us for updates, activities, programmes and information from the movement. — MANAGEMENT
+    </div>
 
   </div>
 
+  <!-- HERO -->
+  <section class="hero">
 
-  <div class="terms-card">
-
-    <h2>2. Use of Website Content</h2>
+    <h1>Terms of Use</h1>
 
     <p>
-      Content published on this website is intended primarily
-      for information and communication purposes.
+      General terms and guidelines for using the City Boy Movement –
+      Ibaji Branch website.
     </p>
 
-    <p>
-      Visitors should not knowingly reproduce, alter, distribute
-      or use website content in a misleading manner.
-    </p>
+  </section>
 
-  </div>
+  <!-- CONTENT -->
+  <main class="container">
 
+    <div class="updated">
+      Last Updated: September 2026
+    </div>
 
-  <div class="terms-card">
+    <!-- 1 -->
+    <section class="terms-card">
 
-    <h2>3. Accuracy of Information</h2>
+      <h2>1. About This Website</h2>
 
-    <p>
-      Reasonable efforts may be made to keep published
-      information accurate and current. However, information
-      such as event dates, venues, programmes and announcements
-      may change.
-    </p>
+      <p>
+        This website provides general information about City Boy Movement –
+        Ibaji Branch, including information about activities, programmes,
+        news, events, membership and contact channels.
+      </p>
 
-    <p>
-      Visitors should confirm important information through
-      official communication channels where necessary.
-    </p>
+      <p>
+        Website content may be updated as new information becomes available.
+      </p>
 
-  </div>
+    </section>
 
+    <!-- 2 -->
+    <section class="terms-card">
 
-  <div class="terms-card">
+      <h2>2. Use of Website Content</h2>
 
-    <h2>4. External Links</h2>
+      <p>
+        Visitors may access and read the information provided on this
+        website for legitimate informational purposes.
+      </p>
 
-    <p>
-      The website may contain links to external websites,
-      social media platforms or other online services.
-    </p>
+      <p>
+        Website content should not be copied, altered, reproduced or
+        presented as an official statement of another organization without
+        appropriate authorization.
+      </p>
 
-    <p>
-      City Boy Movement – Ibaji Branch is not responsible for
-      the content, availability or privacy practices of
-      external websites.
-    </p>
+    </section>
 
-  </div>
+    <!-- 3 -->
+    <section class="terms-card">
 
+      <h2>3. Accuracy of Information</h2>
 
-  <div class="terms-card">
+      <p>
+        Reasonable efforts may be made to keep website information accurate
+        and current.
+      </p>
 
-    <h2>5. User Conduct</h2>
+      <p>
+        However, activities, programmes, meeting arrangements, contact
+        information and other details may change. Visitors should verify
+        important information through the available official contact channels.
+      </p>
 
-    <p>
-      Visitors should use this website in a lawful and
-      respectful manner.
-    </p>
+    </section>
 
-    <ul>
-      <li>Do not attempt to damage or disrupt the website.</li>
-      <li>Do not submit unlawful or fraudulent information.</li>
-      <li>Do not impersonate another person or organization.</li>
-      <li>Do not use the website to distribute harmful content.</li>
-    </ul>
+    <!-- 4 -->
+    <section class="terms-card">
 
-  </div>
+      <h2>4. External Links</h2>
 
+      <p>
+        The website may contain links to external websites or communication
+        platforms.
+      </p>
 
-  <div class="terms-card">
+      <p>
+        External websites are operated independently and may have their own
+        terms, policies and conditions. Visitors should review those terms
+        before using external services.
+      </p>
 
-    <h2>6. Membership Information</h2>
+    </section>
 
-    <p>
-      Information presented on the Membership page is provided
-      for general communication and participation purposes.
-      Specific membership procedures or requirements should be
-      confirmed through authorized representatives of the
-      movement.
-    </p>
+    <!-- 5 -->
+    <section class="terms-card">
 
-  </div>
+      <h2>5. User Conduct</h2>
 
+      <p>
+        Visitors using contact or communication features associated with the
+        website should communicate responsibly and respectfully.
+      </p>
 
-  <div class="terms-card">
+      <ul>
+        <li>Do not knowingly submit false information.</li>
+        <li>Do not misuse website communication channels.</li>
+        <li>Do not attempt to disrupt or damage the website.</li>
+        <li>Do not use the website for unlawful activities.</li>
+        <li>Respect the privacy of other individuals.</li>
+      </ul>
 
-    <h2>7. Changes to the Website</h2>
+    </section>
 
-    <p>
-      Website pages, content, features, links and published
-      information may be changed, updated or removed when
-      necessary.
-    </p>
+    <!-- 6 -->
+    <section class="terms-card">
 
-  </div>
+      <h2>6. Membership Information</h2>
 
+      <p>
+        Information on the Membership page is provided for general guidance.
+        Membership procedures, requirements or organizational arrangements
+        may change.
+      </p>
 
-  <div class="terms-card">
+      <p>
+        Individuals seeking to participate should confirm current procedures
+        through authorized representatives.
+      </p>
 
-    <h2>8. Privacy</h2>
+    </section>
 
-    <p>
-      Visitors should also review the website's
-      <a href="privacy.html" style="color:#087f23;font-weight:bold;">
-        Privacy Policy
+    <!-- 7 -->
+    <section class="terms-card">
+
+      <h2>7. Changes to the Website</h2>
+
+      <p>
+        The website structure, pages, features and content may be changed,
+        updated or removed when necessary.
+      </p>
+
+      <p>
+        New pages and services may also be introduced in the future.
+      </p>
+
+    </section>
+
+    <!-- 8 -->
+    <section class="terms-card">
+
+      <h2>8. Privacy</h2>
+
+      <p>
+        Information concerning website privacy is explained in the
+        Privacy Policy.
+      </p>
+
+      <p>
+        Visitors are encouraged to review the Privacy Policy before
+        submitting personal information through the website.
+      </p>
+
+    </section>
+
+    <!-- NOTICE -->
+    <div class="notice">
+
+      <strong>Important:</strong>
+
+      <p>
+        Information relating to specific activities, programmes, meetings,
+        membership arrangements or contact details should be confirmed
+        through authorized representatives where necessary.
+      </p>
+
+    </div>
+
+    <!-- CONTACT -->
+    <div class="contact-box">
+
+      <h2>Questions About These Terms?</h2>
+
+      <p>
+        If you have questions about the website or these Terms of Use,
+        please contact the branch through the available official channels.
+      </p>
+
+      <a href="contact.html" class="btn">
+        Contact Us
       </a>
-      for information about privacy and voluntarily submitted
-      information.
-    </p>
 
-  </div>
+    </div>
 
+  </main>
 
-  <div class="terms-card">
+  <!-- QUICK LINKS -->
+  <div class="quick-links">
 
-    <h2>9. Contact</h2>
-
-    <p>
-      Questions concerning these Terms & Conditions may be
-      directed through the website's Contact page.
-    </p>
-
-  </div>
-
-</main>
-
-
-<!-- FOOTER -->
-<footer>
-
-  <h3>
-    CITY BOY MOVEMENT – IBAJI BRANCH
-  </h3>
-
-  <p>
-    Ibaji Local Government Area, Kogi State, Nigeria
-  </p>
-
-  <p>
-    Grassroots Organization • Community Engagement • Civic Participation
-  </p>
-
-  <div class="footer-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="activities.html">Activities</a>
+    <a href="news.html">News</a>
+    <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
     <a href="membership.html">Membership</a>
-    <a href="privacy.html">Privacy Policy</a>
+    <a href="faq.html">FAQ</a>
     <a href="contact.html">Contact</a>
+
   </div>
 
-  <div class="copyright">
-    © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
-  </div>
+  <!-- FOOTER -->
+  <footer>
 
-</footer>
+    <p>
+      <strong>CITY BOY MOVEMENT – IBAJI BRANCH</strong>
+    </p>
+
+    <p>
+      Ibaji Local Government Area, Kogi State, Nigeria
+    </p>
+
+    <p>
+      Connecting people, activities, programmes and community engagement.
+    </p>
+
+    <div class="footer-links">
+
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="membership.html">Membership</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+
+    </div>
+
+    <p style="margin-top:15px;">
+      © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
+    </p>
+
+  </footer>
 
 </body>
 </html>
