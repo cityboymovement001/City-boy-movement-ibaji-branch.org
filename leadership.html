@@ -6,627 +6,451 @@
 
   <title>Leadership | City Boy Movement – Ibaji Branch</title>
 
-  <meta name="description"
-        content="Leadership of City Boy Movement, Ibaji Branch, Kogi State.">
+  <meta name="description" content="Leadership information for City Boy Movement – Ibaji Branch.">
 
   <meta name="theme-color" content="#087f23">
 
   <style>
-
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f4f7f4;
+      background: #f4f8f4;
       color: #222;
       line-height: 1.6;
     }
 
-    /* ================= HEADER ================= */
-
     header {
-      background: linear-gradient(135deg, #087f23, #005c1a);
+      background: #087f23;
       color: white;
-      padding: 15px 5%;
+      padding: 15px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
-    .nav-container {
+    .header-inner {
       max-width: 1200px;
       margin: auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      gap: 15px;
     }
 
     .logo {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
-      letter-spacing: .5px;
     }
 
-    .logo span {
-      display: block;
-      font-size: 12px;
-      color: #ffd700;
-      margin-top: 2px;
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 15px;
-      font-size: 14px;
+      font-size: 13px;
+      padding: 6px 8px;
+      border-radius: 5px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: #ffd700;
+      color: #063d15;
+    }
+
+    .welcome-bar {
+      width: 100%;
+      overflow: hidden;
+      background: #ffd700;
+      color: #063d15;
+      padding: 11px 0;
+      white-space: nowrap;
       font-weight: bold;
+      font-size: 15px;
     }
 
-    nav a:hover {
-      color: #ffd700;
+    .welcome-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: welcomeMove 18s linear infinite;
+      animation-delay: 2s;
     }
 
-    /* ================= HERO ================= */
+    @keyframes welcomeMove {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
 
     .hero {
-      background:
-        linear-gradient(
-          rgba(0, 70, 20, .82),
-          rgba(0, 70, 20, .82)
-        ),
-        url("https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1600&q=80");
-
-      background-size: cover;
-      background-position: center;
-
-      min-height: 360px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      text-align: center;
-
+      background: #005c1a;
       color: white;
-
-      padding: 40px 20px;
-    }
-
-    .hero-content {
-      max-width: 900px;
+      text-align: center;
+      padding: 70px 20px;
     }
 
     .hero h1 {
-      font-size: clamp(35px, 6vw, 58px);
+      font-size: 38px;
       margin-bottom: 12px;
     }
 
     .hero p {
-      font-size: clamp(17px, 3vw, 23px);
+      max-width: 750px;
+      margin: auto;
+      font-size: 17px;
     }
-
-    .gold-line {
-      width: 90px;
-      height: 4px;
-      background: #ffd700;
-      margin: 16px auto;
-      border-radius: 10px;
-    }
-
-    /* ================= MAIN ================= */
 
     .container {
-      max-width: 1200px;
+      max-width: 1150px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 55px 20px;
     }
 
-    .section-title {
+    .intro {
       text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .intro h2 {
       color: #087f23;
-      font-size: 34px;
-      margin-bottom: 12px;
-    }
-
-    .section-intro {
-      max-width: 800px;
-      margin: 0 auto 45px;
-      text-align: center;
-      color: #666;
-    }
-
-    /* ================= LEADERSHIP GRID ================= */
-
-    .leadership-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 30px;
-    }
-
-    /* ================= PROFILE CARD ================= */
-
-    .profile-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-
-      box-shadow:
-        0 7px 25px rgba(0,0,0,.08);
-
-      text-align: center;
-
-      transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-    }
-
-    .profile-card:hover {
-      transform: translateY(-8px);
-
-      box-shadow:
-        0 15px 35px rgba(0,0,0,.15);
-    }
-
-    /* ================= PHOTO ================= */
-
-    .photo-container {
-      height: 340px;
-      background: #e8f5e9;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .photo-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform .5s ease;
-    }
-
-    .profile-card:hover .photo-container img {
-      transform: scale(1.04);
-    }
-
-    /* ================= PROFILE INFO ================= */
-
-    .profile-info {
-      padding: 25px 20px 30px;
-    }
-
-    .profile-info h3 {
-      color: #087f23;
-      font-size: 21px;
-      margin-bottom: 7px;
-    }
-
-    .position {
-      color: #b58a00;
-      font-size: 15px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    .profile-line {
-      width: 55px;
-      height: 3px;
-      background: #087f23;
-      margin: 12px auto 16px;
-      border-radius: 10px;
-    }
-
-    .profile-info p {
-      color: #666;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    /* ================= SPECIAL BADGE ================= */
-
-    .badge {
-      display: inline-block;
-      background: #087f23;
-      color: white;
-      padding: 6px 13px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: bold;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-    }
-
-    /* ================= LEADERSHIP MESSAGE ================= */
-
-    .leadership-message {
-      margin-top: 65px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #087f23,
-          #005c1a
-        );
-
-      color: white;
-
-      border-radius: 20px;
-
-      padding: 45px 25px;
-
-      text-align: center;
-    }
-
-    .leadership-message h2 {
-      color: #ffd700;
       font-size: 29px;
-      margin-bottom: 15px;
-    }
-
-    .leadership-message p {
-      max-width: 850px;
-      margin: auto;
-      font-size: 16px;
-    }
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      background: #063d15;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    footer h3 {
-      color: #ffd700;
       margin-bottom: 10px;
     }
 
-    footer p {
-      color: #ddd;
-      margin: 5px 0;
+    .intro p {
+      max-width: 800px;
+      margin: auto;
+      color: #555;
     }
 
-    .copyright {
+    .leaders {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .leader-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+      text-align: center;
+      border-top: 5px solid #087f23;
+    }
+
+    .leader-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .leader-info {
+      padding: 22px 18px 25px;
+    }
+
+    .leader-info h3 {
+      color: #087f23;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .leader-info .position {
+      color: #555;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .leader-info p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .info-section {
+      margin-top: 45px;
+      background: #087f23;
+      color: white;
+      border-radius: 14px;
+      padding: 35px 25px;
+      text-align: center;
+    }
+
+    .info-section h2 {
+      color: #ffd700;
+      margin-bottom: 12px;
+    }
+
+    .info-section p {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    footer {
+      background: #005c1a;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
       margin-top: 20px;
-      padding-top: 15px;
-      border-top: 1px solid rgba(255,255,255,.2);
-      color: #ccc;
-      font-size: 13px;
     }
 
-    /* ================= MOBILE ================= */
+    footer p {
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      color: #ffd700;
+      text-decoration: none;
+      margin: 0 6px;
+      font-size: 14px;
+    }
 
     @media (max-width: 800px) {
 
-      header {
-        position: relative;
-      }
-
-      .nav-container {
+      .header-inner {
         flex-direction: column;
-        gap: 15px;
       }
 
       nav {
-        text-align: center;
+        gap: 3px;
       }
 
       nav a {
-        display: inline-block;
-        margin: 5px 6px;
+        font-size: 12px;
+        padding: 5px 6px;
       }
 
-      .photo-container {
-        height: 330px;
+      .hero h1 {
+        font-size: 30px;
       }
 
+      .leader-card img {
+        height: 300px;
+      }
     }
-
   </style>
 </head>
 
-
 <body>
-
-
-<!-- ================= HEADER ================= -->
 
 <header>
 
-  <div class="nav-container">
+  <div class="header-inner">
 
     <div class="logo">
-      CITY BOY MOVEMENT
-      <span>IBAJI BRANCH</span>
+      CITY BOY MOVEMENT – IBAJI BRANCH
     </div>
 
     <nav>
-
       <a href="index.html">Home</a>
-
       <a href="about.html">About</a>
-
-      <a href="leadership.html">Leadership</a>
-
+      <a href="leadership.html" class="active">Leadership</a>
       <a href="activities.html">Activities</a>
-
       <a href="news.html">News</a>
-
       <a href="events.html">Events</a>
-
       <a href="gallery.html">Gallery</a>
-
+      <a href="membership.html">Membership</a>
+      <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
-
     </nav>
 
   </div>
 
 </header>
 
+<div class="welcome-bar">
 
+  <div class="welcome-text">
+    WELCOME TO CITY BOY MOVEMENT – IBAJI BRANCH. Please connect with us for updates, activities, programmes and information from the movement. — MANAGEMENT
+  </div>
 
-<!-- ================= HERO ================= -->
+</div>
 
 <section class="hero">
 
-  <div class="hero-content">
+  <h1>Our Leadership</h1>
 
-    <h1>Our Leadership</h1>
+  <p>
+    Information about the leadership and coordination structure
+    associated with City Boy Movement – Ibaji Branch.
+  </p>
 
-    <div class="gold-line"></div>
+</section>
+
+<main class="container">
+
+  <div class="intro">
+
+    <h2>Leadership</h2>
 
     <p>
-      City Boy Movement – Ibaji Local Government Area Branch
+      The following individuals have been identified by the
+      movement as part of its leadership and coordination structure.
     </p>
 
   </div>
 
-</section>
+  <div class="leaders">
 
+    <!-- PRESIDENT TINUBU -->
+    <div class="leader-card">
 
+      <img
+        src="https://i.ibb.co/4gfRqkXP/file-00000000d2cc821092130ed183a6f17a.png"
+        alt="President Bola Ahmed Tinubu">
 
-<!-- ================= LEADERSHIP ================= -->
+      <div class="leader-info">
 
-<section class="container">
-
-  <h2 class="section-title">
-    Leadership & Key Officials
-  </h2>
-
-  <p class="section-intro">
-
-    Meet the leaders and officials associated with the City Boy Movement
-    and its Ibaji Branch structure.
-
-  </p>
-
-
-  <div class="leadership-grid">
-
-
-    <!-- ================= PRESIDENT TINUBU ================= -->
-
-    <div class="profile-card">
-
-      <div class="photo-container">
-
-        <img
-          src="https://i.ibb.co/4gfRqkXP/file-00000000d2cc821092130ed183a6f17a.png"
-          alt="President Bola Ahmed Tinubu"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="profile-info">
-
-        <span class="badge">
-          Grand Patron
-        </span>
-
-        <h3>
-          President Bola Ahmed Tinubu
-        </h3>
-
-        <div class="profile-line"></div>
+        <h3>President Bola Ahmed Tinubu</h3>
 
         <div class="position">
           Grand Patron, City Boy Movement
         </div>
 
         <p>
-          President of the Federal Republic of Nigeria and
-          Grand Patron of the City Boy Movement.
+          Listed on this platform as Grand Patron of the
+          City Boy Movement.
         </p>
 
       </div>
 
     </div>
 
+    <!-- SEYI TINUBU -->
+    <div class="leader-card">
 
+      <img
+        src="https://i.ibb.co/S73fNxPM/file-00000000195c81f4a2ca273e2e710ba3.png"
+        alt="Barrister Seyi Tinubu">
 
-    <!-- ================= SEYI TINUBU ================= -->
+      <div class="leader-info">
 
-    <div class="profile-card">
-
-      <div class="photo-container">
-
-        <img
-          src="https://i.ibb.co/S73fNxPM/file-00000000195c81f4a2ca273e2e710ba3.png"
-          alt="Barrister Seyi Tinubu"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="profile-info">
-
-        <span class="badge">
-          Patron
-        </span>
-
-        <h3>
-          Barr. Seyi Tinubu
-        </h3>
-
-        <div class="profile-line"></div>
+        <h3>Barr. Seyi Tinubu</h3>
 
         <div class="position">
           Patron, City Boy Movement
         </div>
 
         <p>
-          Patron of the City Boy Movement and a prominent
-          figure in the movement's youth and grassroots
-          engagement activities.
+          Listed on this platform as a Patron of the
+          City Boy Movement.
         </p>
 
       </div>
 
     </div>
 
+    <!-- MARK OKPANACHI OGAH -->
+    <div class="leader-card">
 
+      <img
+        src="https://i.ibb.co/ksngDdxY/file-000000002e608243be77f3f7acd917cd.png"
+        alt="Hon. Mark Okpanachi Ogah">
 
-    <!-- ================= MARK OKPANACHI OGAH ================= -->
+      <div class="leader-info">
 
-    <div class="profile-card">
-
-      <div class="photo-container">
-
-        <img
-          src="https://i.ibb.co/ksngDdxY/file-000000002e608243be77f3f7acd917cd.png"
-          alt="Hon. Mark Okpanachi Ogah"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="profile-info">
-
-        <span class="badge">
-          Kogi State
-        </span>
-
-        <h3>
-          Hon. Mark Okpanachi Ogah
-        </h3>
-
-        <div class="profile-line"></div>
+        <h3>Hon. Mark Okpanachi Ogah</h3>
 
         <div class="position">
-          Director, City Boy Movement – Kogi State
+          Director, Kogi State City Boy Movement
         </div>
 
         <p>
-          Provides coordination and leadership for the
-          City Boy Movement structure in Kogi State.
+          Listed on this platform as Director of the
+          Kogi State City Boy Movement.
         </p>
 
       </div>
 
     </div>
 
+    <!-- JERRY MARCEL -->
+    <div class="leader-card">
 
+      <img
+        src="https://i.ibb.co/twky85k4/file-00000000cd7881f4b05b75941f45972a.png"
+        alt="Comr. Jerry Marcel">
 
-    <!-- ================= JERRY MARCEL ================= -->
+      <div class="leader-info">
 
-    <div class="profile-card">
-
-      <div class="photo-container">
-
-        <img
-          src="https://i.ibb.co/twky85k4/file-00000000cd7881f4b05b75941f45972a.png"
-          alt="Comr. Jerry Marcel"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="profile-info">
-
-        <span class="badge">
-          Ibaji Branch
-        </span>
-
-        <h3>
-          Comr. Jerry Marcel
-        </h3>
-
-        <div class="profile-line"></div>
+        <h3>Comr. Jerry Marcel</h3>
 
         <div class="position">
           Coordinator, City Boy Movement – Ibaji Branch
         </div>
 
         <p>
-          Coordinates the activities and grassroots
-          engagement of the City Boy Movement in
-          Ibaji Local Government Area.
+          Listed on this platform as Coordinator of the
+          City Boy Movement – Ibaji Branch.
         </p>
 
       </div>
 
     </div>
 
-
   </div>
 
+  <div class="info-section">
 
-
-  <!-- ================= MESSAGE ================= -->
-
-  <div class="leadership-message">
-
-    <h2>
-      Leadership, Organization & Service
-    </h2>
+    <h2>Leadership & Coordination</h2>
 
     <p>
-      The City Boy Movement – Ibaji Branch provides an organized
-      platform for grassroots engagement, communication, activities
-      and participation within Ibaji Local Government Area.
+      The leadership structure presented on this page is intended
+      to help visitors identify the individuals associated with
+      the movement and its activities in Kogi State and Ibaji
+      Local Government Area.
     </p>
 
   </div>
 
-
-</section>
-
-
-
-<!-- ================= FOOTER ================= -->
+</main>
 
 <footer>
 
-  <h3>
-    CITY BOY MOVEMENT – IBAJI BRANCH
-  </h3>
+  <p>
+    <strong>CITY BOY MOVEMENT – IBAJI BRANCH</strong>
+  </p>
 
   <p>
     Ibaji Local Government Area, Kogi State, Nigeria
   </p>
 
   <p>
-    Grassroots Organization • Community Engagement • Civic Participation
+    © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
   </p>
 
-  <div class="copyright">
+  <div class="footer-links">
 
-    © 2026 City Boy Movement – Ibaji Branch.
-    All Rights Reserved.
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="activities.html">Activities</a>
+    <a href="news.html">News</a>
+    <a href="events.html">Events</a>
+    <a href="membership.html">Membership</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
 
   </div>
 
 </footer>
-
 
 </body>
 </html>
