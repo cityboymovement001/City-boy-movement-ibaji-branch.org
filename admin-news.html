@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>News Management | City Boy Movement – Ibaji Branch</title>
-
   <meta name="theme-color" content="#087f23">
 
   <style>
@@ -119,6 +118,12 @@
       margin-left: 8px;
     }
 
+    .logout {
+      background: #b00020;
+      color: white;
+      margin-left: 8px;
+    }
+
     .output {
       display: none;
     }
@@ -179,9 +184,9 @@
 <main class="container">
 
   <div class="notice">
-    <strong>How this works:</strong><br>
-    Enter the details of your news below. The page will generate a ready-to-use
-    news card that you can place inside <strong>news.html</strong>.
+    <strong>Admin Area</strong><br>
+    You are logged in to the News Management page.
+    Enter the details of a news update below to generate a news card.
   </div>
 
   <section class="card">
@@ -189,6 +194,7 @@
     <h2>Create News Update</h2>
 
     <label for="headline">News Headline</label>
+
     <input
       type="text"
       id="headline"
@@ -196,12 +202,14 @@
     >
 
     <label for="date">Date</label>
+
     <input
       type="date"
       id="date"
     >
 
     <label for="image">Image URL</label>
+
     <input
       type="url"
       id="image"
@@ -209,6 +217,7 @@
     >
 
     <label for="category">Category</label>
+
     <input
       type="text"
       id="category"
@@ -216,17 +225,31 @@
     >
 
     <label for="story">News Story</label>
+
     <textarea
       id="story"
       placeholder="Write the news story here..."
     ></textarea>
 
-    <button class="btn generate" onclick="generateNews()">
+    <button
+      class="btn generate"
+      onclick="generateNews()"
+    >
       Generate News Card
     </button>
 
-    <button class="btn clear" onclick="clearForm()">
+    <button
+      class="btn clear"
+      onclick="clearForm()"
+    >
       Clear
+    </button>
+
+    <button
+      class="btn logout"
+      onclick="logout()"
+    >
+      Logout
     </button>
 
   </section>
@@ -236,17 +259,26 @@
     <h2>Generated News Card</h2>
 
     <p>
-      Copy the code below and place it inside the news cards section of
-      <strong>news.html</strong>.
+      Copy the generated code and place it inside the news section
+      of <strong>news.html</strong>.
     </p>
 
-    <textarea id="generatedCode" readonly></textarea>
+    <textarea
+      id="generatedCode"
+      readonly
+    ></textarea>
 
-    <button class="btn copy" onclick="copyCode()">
+    <button
+      class="btn copy"
+      onclick="copyCode()"
+    >
       Copy News Code
     </button>
 
-    <p id="copyMessage" style="margin-top:10px;font-weight:bold;"></p>
+    <p
+      id="copyMessage"
+      style="margin-top:10px;font-weight:bold;"
+    ></p>
 
   </section>
 
@@ -257,58 +289,129 @@
 </main>
 
 <footer>
-  <p><strong>CITY BOY MOVEMENT – IBAJI BRANCH</strong></p>
-  <p>Ibaji Local Government Area, Kogi State, Nigeria</p>
+
+  <p>
+    <strong>CITY BOY MOVEMENT – IBAJI BRANCH</strong>
+  </p>
+
+  <p>
+    Ibaji Local Government Area, Kogi State, Nigeria
+  </p>
 
   <p style="margin-top:10px;">
-    <a href="index.html">Home</a> |
     <a href="news.html">News</a> |
+    <a href="index.html">Home</a> |
     <a href="contact.html">Contact</a>
   </p>
 
   <p style="margin-top:10px;">
     © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
   </p>
+
 </footer>
 
 <script>
 
+/* ==============================
+   ADMIN ACCESS CHECK
+============================== */
+
+if (
+  sessionStorage.getItem("cityBoyAdminLoggedIn") !== "true"
+) {
+
+  window.location.replace("admin-login.html");
+
+}
+
+
+/* ==============================
+   HTML ESCAPE
+============================== */
+
 function escapeHTML(text) {
+
   return text
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+
 }
+
+
+/* ==============================
+   GENERATE NEWS
+============================== */
 
 function generateNews() {
 
-  const headline = document.getElementById("headline").value.trim();
-  const dateValue = document.getElementById("date").value;
-  const image = document.getElementById("image").value.trim();
-  const category = document.getElementById("category").value.trim();
-  const story = document.getElementById("story").value.trim();
+  const headline =
+    document.getElementById("headline").value.trim();
 
-  if (!headline || !dateValue || !image || !category || !story) {
-    alert("Please complete all fields before generating the news.");
+  const dateValue =
+    document.getElementById("date").value;
+
+  const image =
+    document.getElementById("image").value.trim();
+
+  const category =
+    document.getElementById("category").value.trim();
+
+  const story =
+    document.getElementById("story").value.trim();
+
+
+  if (
+    !headline ||
+    !dateValue ||
+    !image ||
+    !category ||
+    !story
+  ) {
+
+    alert(
+      "Please complete all fields before generating the news."
+    );
+
     return;
+
   }
 
-  const date = new Date(dateValue + "T00:00:00");
 
-  const formattedDate = date.toLocaleDateString("en-NG", {
-    day: "numeric",
-    month: "long",
-    year: "numeric"
-  });
+  const date =
+    new Date(dateValue + "T00:00:00");
 
-  const safeHeadline = escapeHTML(headline);
-  const safeCategory = escapeHTML(category);
-  const safeStory = escapeHTML(story);
+
+  const formattedDate =
+    date.toLocaleDateString("en-NG", {
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    });
+
+
+  const safeHeadline =
+    escapeHTML(headline);
+
+  const safeCategory =
+    escapeHTML(category);
+
+  const safeStory =
+    escapeHTML(story);
+
+
+  const whatsappText =
+    encodeURIComponent(
+      headline +
+      " - City Boy Movement – Ibaji Branch"
+    );
+
 
   const code = `
 <!-- NEWS ITEM START -->
+
 <article class="news-card">
 
   <img
@@ -319,13 +422,13 @@ function generateNews() {
 
   <div class="news-content">
 
-    <span class="news-category">
+    <span class="category">
       ${safeCategory}
     </span>
 
-    <p class="news-date">
+    <div class="date">
       ${formattedDate}
-    </p>
+    </div>
 
     <h3>
       ${safeHeadline}
@@ -337,9 +440,7 @@ function generateNews() {
 
     <a
       class="whatsapp-btn"
-      href="https://wa.me/?text=${encodeURIComponent(
-        headline + " - City Boy Movement – Ibaji Branch"
-      )}"
+      href="https://wa.me/?text=${whatsappText}"
       target="_blank"
       rel="noopener"
     >
@@ -349,52 +450,128 @@ function generateNews() {
   </div>
 
 </article>
+
 <!-- NEWS ITEM END -->
 `;
 
-  document.getElementById("generatedCode").value = code.trim();
 
-  document.getElementById("outputBox").style.display = "block";
+  document.getElementById(
+    "generatedCode"
+  ).value = code.trim();
+
+
+  document.getElementById(
+    "outputBox"
+  ).style.display = "block";
+
 
   window.scrollTo({
-    top: document.getElementById("outputBox").offsetTop - 20,
+    top:
+      document.getElementById(
+        "outputBox"
+      ).offsetTop - 20,
+
     behavior: "smooth"
   });
+
 }
+
+
+/* ==============================
+   COPY CODE
+============================== */
 
 function copyCode() {
 
-  const codeBox = document.getElementById("generatedCode");
+  const codeBox =
+    document.getElementById(
+      "generatedCode"
+    );
 
-  navigator.clipboard.writeText(codeBox.value)
-    .then(function() {
 
-      document.getElementById("copyMessage").textContent =
-        "News code copied successfully.";
+  navigator.clipboard.writeText(
+    codeBox.value
+  )
 
-    })
-    .catch(function() {
+  .then(function() {
 
-      codeBox.select();
-      document.execCommand("copy");
+    document.getElementById(
+      "copyMessage"
+    ).textContent =
+      "News code copied successfully.";
 
-      document.getElementById("copyMessage").textContent =
-        "News code copied successfully.";
+  })
 
-    });
+  .catch(function() {
+
+    codeBox.select();
+
+    document.execCommand("copy");
+
+    document.getElementById(
+      "copyMessage"
+    ).textContent =
+      "News code copied successfully.";
+
+  });
+
 }
+
+
+/* ==============================
+   CLEAR FORM
+============================== */
 
 function clearForm() {
 
-  document.getElementById("headline").value = "";
-  document.getElementById("date").value = "";
-  document.getElementById("image").value = "";
-  document.getElementById("category").value = "";
-  document.getElementById("story").value = "";
+  document.getElementById(
+    "headline"
+  ).value = "";
 
-  document.getElementById("outputBox").style.display = "none";
-  document.getElementById("generatedCode").value = "";
-  document.getElementById("copyMessage").textContent = "";
+  document.getElementById(
+    "date"
+  ).value = "";
+
+  document.getElementById(
+    "image"
+  ).value = "";
+
+  document.getElementById(
+    "category"
+  ).value = "";
+
+  document.getElementById(
+    "story"
+  ).value = "";
+
+  document.getElementById(
+    "outputBox"
+  ).style.display = "none";
+
+  document.getElementById(
+    "generatedCode"
+  ).value = "";
+
+  document.getElementById(
+    "copyMessage"
+  ).textContent = "";
+
+}
+
+
+/* ==============================
+   LOGOUT
+============================== */
+
+function logout() {
+
+  sessionStorage.removeItem(
+    "cityBoyAdminLoggedIn"
+  );
+
+  window.location.href =
+    "admin-login.html";
+
 }
 
 </script>
