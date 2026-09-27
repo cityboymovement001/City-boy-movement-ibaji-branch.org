@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>News Management | City Boy Movement – Ibaji Branch</title>
+
+  <meta name="theme-color" content="#087f23">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4fff6;
+      color: #18351f;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #087f23;
+      color: white;
+      padding: 18px 20px;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-size: 23px;
+    }
+
+    header p {
+      color: #ffd700;
+      margin-top: 4px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 15px 50px;
+    }
+
+    .notice {
+      background: #fff8d8;
+      border-left: 5px solid #ffd700;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    .card h2 {
+      color: #087f23;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 15px 0 7px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #c8d8cc;
+      border-radius: 7px;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #087f23;
+      box-shadow: 0 0 0 2px rgba(8,127,35,0.1);
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      padding: 13px 20px;
+      border-radius: 7px;
+      font-weight: bold;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+
+    .generate {
+      background: #087f23;
+      color: white;
+    }
+
+    .clear {
+      background: #ddd;
+      color: #222;
+      margin-left: 8px;
+    }
+
+    .output {
+      display: none;
+    }
+
+    .output textarea {
+      min-height: 300px;
+      font-family: monospace;
+      font-size: 13px;
+    }
+
+    .copy {
+      background: #ffd700;
+      color: #063d15;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 15px;
+      color: #087f23;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      background: #063d15;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 18px;
+      }
+
+      .btn {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>News Management</h1>
+    <p>City Boy Movement – Ibaji Branch</p>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="notice">
+    <strong>How this works:</strong><br>
+    Enter the details of your news below. The page will generate a ready-to-use
+    news card that you can place inside <strong>news.html</strong>.
+  </div>
+
+  <section class="card">
+
+    <h2>Create News Update</h2>
+
+    <label for="headline">News Headline</label>
+    <input
+      type="text"
+      id="headline"
+      placeholder="Enter the news headline"
+    >
+
+    <label for="date">Date</label>
+    <input
+      type="date"
+      id="date"
+    >
+
+    <label for="image">Image URL</label>
+    <input
+      type="url"
+      id="image"
+      placeholder="https://i.ibb.co/example/image.jpg"
+    >
+
+    <label for="category">Category</label>
+    <input
+      type="text"
+      id="category"
+      placeholder="News, Activity, Programme, Community, etc."
+    >
+
+    <label for="story">News Story</label>
+    <textarea
+      id="story"
+      placeholder="Write the news story here..."
+    ></textarea>
+
+    <button class="btn generate" onclick="generateNews()">
+      Generate News Card
+    </button>
+
+    <button class="btn clear" onclick="clearForm()">
+      Clear
+    </button>
+
+  </section>
+
+  <section class="card output" id="outputBox">
+
+    <h2>Generated News Card</h2>
+
+    <p>
+      Copy the code below and place it inside the news cards section of
+      <strong>news.html</strong>.
+    </p>
+
+    <textarea id="generatedCode" readonly></textarea>
+
+    <button class="btn copy" onclick="copyCode()">
+      Copy News Code
+    </button>
+
+    <p id="copyMessage" style="margin-top:10px;font-weight:bold;"></p>
+
+  </section>
+
+  <a class="back" href="news.html">
+    ← Back to News
+  </a>
+
+</main>
+
+<footer>
+  <p><strong>CITY BOY MOVEMENT – IBAJI BRANCH</strong></p>
+  <p>Ibaji Local Government Area, Kogi State, Nigeria</p>
+
+  <p style="margin-top:10px;">
+    <a href="index.html">Home</a> |
+    <a href="news.html">News</a> |
+    <a href="contact.html">Contact</a>
+  </p>
+
+  <p style="margin-top:10px;">
+    © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
+  </p>
+</footer>
+
+<script>
+
+function escapeHTML(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function generateNews() {
+
+  const headline = document.getElementById("headline").value.trim();
+  const dateValue = document.getElementById("date").value;
+  const image = document.getElementById("image").value.trim();
+  const category = document.getElementById("category").value.trim();
+  const story = document.getElementById("story").value.trim();
+
+  if (!headline || !dateValue || !image || !category || !story) {
+    alert("Please complete all fields before generating the news.");
+    return;
+  }
+
+  const date = new Date(dateValue + "T00:00:00");
+
+  const formattedDate = date.toLocaleDateString("en-NG", {
+    day: "numeric",
+    month: "long",
+    year: "numeric"
+  });
+
+  const safeHeadline = escapeHTML(headline);
+  const safeCategory = escapeHTML(category);
+  const safeStory = escapeHTML(story);
+
+  const code = `
+<!-- NEWS ITEM START -->
+<article class="news-card">
+
+  <img
+    src="${image}"
+    alt="${safeHeadline}"
+    loading="lazy"
+  >
+
+  <div class="news-content">
+
+    <span class="news-category">
+      ${safeCategory}
+    </span>
+
+    <p class="news-date">
+      ${formattedDate}
+    </p>
+
+    <h3>
+      ${safeHeadline}
+    </h3>
+
+    <p>
+      ${safeStory}
+    </p>
+
+    <a
+      class="whatsapp-btn"
+      href="https://wa.me/?text=${encodeURIComponent(
+        headline + " - City Boy Movement – Ibaji Branch"
+      )}"
+      target="_blank"
+      rel="noopener"
+    >
+      Share on WhatsApp
+    </a>
+
+  </div>
+
+</article>
+<!-- NEWS ITEM END -->
+`;
+
+  document.getElementById("generatedCode").value = code.trim();
+
+  document.getElementById("outputBox").style.display = "block";
+
+  window.scrollTo({
+    top: document.getElementById("outputBox").offsetTop - 20,
+    behavior: "smooth"
+  });
+}
+
+function copyCode() {
+
+  const codeBox = document.getElementById("generatedCode");
+
+  navigator.clipboard.writeText(codeBox.value)
+    .then(function() {
+
+      document.getElementById("copyMessage").textContent =
+        "News code copied successfully.";
+
+    })
+    .catch(function() {
+
+      codeBox.select();
+      document.execCommand("copy");
+
+      document.getElementById("copyMessage").textContent =
+        "News code copied successfully.";
+
+    });
+}
+
+function clearForm() {
+
+  document.getElementById("headline").value = "";
+  document.getElementById("date").value = "";
+  document.getElementById("image").value = "";
+  document.getElementById("category").value = "";
+  document.getElementById("story").value = "";
+
+  document.getElementById("outputBox").style.display = "none";
+  document.getElementById("generatedCode").value = "";
+  document.getElementById("copyMessage").textContent = "";
+}
+
+</script>
+
+</body>
+</html>
