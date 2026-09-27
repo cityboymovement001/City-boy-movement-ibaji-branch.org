@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin-login.html
+Disallow: /admin-dashboard.html
+Disallow: /admin-news.html
+Disallow: /admin-members.html
+
+Sitemap: https://cityboymovement001.github.io/City-boy-movement-ibaji-branch.org/sitemap.xml
