@@ -4,67 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Events | City Boy Movement – Ibaji Branch</title>
+  <title>Events & Programmes | City Boy Movement – Ibaji Branch</title>
 
-  <meta name="description" content="Upcoming and past events of City Boy Movement – Ibaji Branch.">
+  <meta name="description" content="Events, programmes, meetings and activities of City Boy Movement – Ibaji Branch.">
 
   <meta name="theme-color" content="#087f23">
 
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f8f5;
+      background: #f4f8f4;
       color: #222;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     header {
-      background: linear-gradient(135deg, #087f23, #005c1a);
+      background: #087f23;
       color: white;
-      padding: 15px 5%;
+      padding: 15px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
-    .nav-container {
+    .header-inner {
       max-width: 1200px;
       margin: auto;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      gap: 15px;
     }
 
     .logo {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
     }
 
-    .logo span {
-      display: block;
-      font-size: 12px;
-      color: #ffd700;
-      margin-top: 2px;
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 7px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 17px;
-      font-size: 14px;
-      font-weight: bold;
+      font-size: 13px;
+      padding: 6px 8px;
+      border-radius: 5px;
     }
 
-    nav a:hover {
-      color: #ffd700;
+    nav a:hover,
+    nav a.active {
+      background: #ffd700;
+      color: #063d15;
     }
+
+    /* WELCOME MESSAGE */
 
     .welcome-bar {
       width: 100%;
@@ -94,128 +99,122 @@
       }
     }
 
-    .hero {
-      background:
-        linear-gradient(rgba(0,70,20,0.78), rgba(0,70,20,0.78)),
-        url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80");
-      background-size: cover;
-      background-position: center;
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 40px 20px;
-    }
+    /* HERO */
 
-    .hero-content {
-      max-width: 850px;
+    .hero {
+      background: #005c1a;
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
     }
 
     .hero h1 {
-      font-size: clamp(35px, 6vw, 58px);
-      margin-bottom: 15px;
+      font-size: 38px;
+      margin-bottom: 12px;
     }
 
     .hero p {
-      font-size: clamp(17px, 3vw, 23px);
+      max-width: 800px;
+      margin: auto;
+      font-size: 17px;
     }
 
-    .gold-line {
-      width: 90px;
-      height: 4px;
-      background: #ffd700;
-      margin: 15px auto;
-      border-radius: 10px;
-    }
+    /* MAIN */
 
     .container {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 55px 20px;
     }
 
-    .section-title {
+    .intro {
       text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .intro h2 {
       color: #087f23;
-      font-size: 32px;
-      margin-bottom: 15px;
+      font-size: 29px;
+      margin-bottom: 10px;
     }
 
-    .section-intro {
-      text-align: center;
+    .intro p {
       max-width: 800px;
-      margin: 0 auto 40px;
+      margin: auto;
       color: #555;
     }
 
+    /* EVENT GRID */
+
     .events {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 25px;
     }
 
     .event-card {
       background: white;
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 5px 18px rgba(0,0,0,0.09);
       border-top: 5px solid #087f23;
     }
 
-    .event-date {
+    .event-top {
       background: #087f23;
       color: white;
+      padding: 18px;
       text-align: center;
-      padding: 20px;
     }
 
-    .event-date .day {
-      display: block;
-      font-size: 35px;
+    .event-number {
+      font-size: 30px;
       font-weight: bold;
       color: #ffd700;
     }
 
-    .event-date .month {
+    .event-status {
+      font-size: 13px;
       font-weight: bold;
-      text-transform: uppercase;
+      margin-top: 4px;
     }
 
     .event-content {
-      padding: 25px;
+      padding: 23px;
     }
 
     .event-content h3 {
       color: #087f23;
-      margin-bottom: 10px;
       font-size: 21px;
+      margin-bottom: 10px;
     }
 
     .event-content p {
       color: #555;
-      margin-bottom: 10px;
+      font-size: 15px;
+      margin-bottom: 15px;
     }
 
-    .event-tag {
-      display: inline-block;
-      background: #e8f5e9;
-      color: #087f23;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-      margin-top: 8px;
+    .event-info {
+      border-top: 1px solid #eee;
+      padding-top: 13px;
+      color: #666;
+      font-size: 14px;
     }
+
+    .event-info div {
+      margin-bottom: 7px;
+    }
+
+    /* INFORMATION BOX */
 
     .notice {
-      background: linear-gradient(135deg, #087f23, #005c1a);
-      color: white;
-      padding: 40px 25px;
-      border-radius: 18px;
-      text-align: center;
       margin-top: 45px;
+      background: #087f23;
+      color: white;
+      border-radius: 14px;
+      padding: 35px 25px;
+      text-align: center;
     }
 
     .notice h2 {
@@ -223,121 +222,212 @@
       margin-bottom: 12px;
     }
 
-    footer {
-      background: #063d15;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
+    .notice p {
+      max-width: 850px;
+      margin: auto;
     }
 
-    footer h3 {
-      color: #ffd700;
+    /* CALL TO ACTION */
+
+    .cta {
+      margin-top: 35px;
+      background: white;
+      padding: 35px 20px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    }
+
+    .cta h2 {
+      color: #087f23;
       margin-bottom: 10px;
     }
 
-    footer p {
-      color: #ddd;
-      margin: 6px 0;
+    .cta p {
+      color: #555;
+      max-width: 750px;
+      margin: auto;
     }
 
-    .copyright {
-      margin-top: 22px;
-      padding-top: 15px;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      font-size: 13px;
-      color: #ccc;
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 22px;
+      border-radius: 7px;
+      background: #087f23;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
+
+    .btn:hover {
+      background: #005c1a;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #005c1a;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 20px;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      color: #ffd700;
+      text-decoration: none;
+      margin: 0 6px;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
 
     @media (max-width: 800px) {
 
-      header {
-        position: relative;
-      }
-
-      .nav-container {
+      .header-inner {
         flex-direction: column;
-        gap: 15px;
       }
 
       nav {
-        text-align: center;
+        gap: 3px;
       }
 
       nav a {
-        display: inline-block;
-        margin: 5px 6px;
+        font-size: 12px;
+        padding: 5px 6px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .event-content {
+        padding: 20px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-  <div class="nav-container">
+
+  <div class="header-inner">
 
     <div class="logo">
-      CITY BOY MOVEMENT
-      <span>IBAJI BRANCH</span>
+      CITY BOY MOVEMENT – IBAJI BRANCH
     </div>
 
     <nav>
+
       <a href="index.html">Home</a>
+
       <a href="about.html">About</a>
+
       <a href="leadership.html">Leadership</a>
+
       <a href="activities.html">Activities</a>
+
       <a href="news.html">News</a>
-      <a href="events.html">Events</a>
+
+      <a href="events.html" class="active">Events</a>
+
+      <a href="gallery.html">Gallery</a>
+
+      <a href="membership.html">Membership</a>
+
+      <a href="faq.html">FAQ</a>
+
       <a href="contact.html">Contact</a>
+
     </nav>
 
   </div>
+
 </header>
 
+
+<!-- WELCOME BAR -->
+
 <div class="welcome-bar">
+
   <div class="welcome-text">
-    WELCOME TO CITY BOY MOVEMENT – IBAJI BRANCH. Please connect with us for updates, activities, programmes and information from the movement. — MANAGEMENT
+
+    WELCOME TO CITY BOY MOVEMENT – IBAJI BRANCH.
+    Please connect with us for updates, activities,
+    programmes and information from the movement. — MANAGEMENT
+
   </div>
+
 </div>
+
+
+<!-- HERO -->
 
 <section class="hero">
 
-  <div class="hero-content">
+  <h1>Events & Programmes</h1>
 
-    <h1>Events & Programmes</h1>
+  <p>
 
-    <div class="gold-line"></div>
+    Stay informed about meetings, programmes,
+    engagements and activities associated with
+    City Boy Movement – Ibaji Branch.
+
+  </p>
+
+</section>
+
+
+<!-- MAIN CONTENT -->
+
+<main class="container">
+
+  <div class="intro">
+
+    <h2>Upcoming & Planned Activities</h2>
 
     <p>
-      City Boy Movement – Ibaji Branch
-    </p>
 
-    <p>
-      Meetings, programmes, community activities and branch events.
+      This page provides a central place for confirmed
+      events, meetings and programmes. Official dates,
+      venues and programme details can be added when
+      they are confirmed.
+
     </p>
 
   </div>
 
-</section>
-
-<section class="container">
-
-  <h2 class="section-title">
-    Our Events
-  </h2>
-
-  <p class="section-intro">
-    This page provides information about branch meetings,
-    community activities, programmes and other events.
-  </p>
 
   <div class="events">
 
+
+    <!-- EVENT 1 -->
+
     <div class="event-card">
 
-      <div class="event-date">
-        <span class="day">01</span>
-        <span class="month">Upcoming</span>
+      <div class="event-top">
+
+        <div class="event-number">
+          01
+        </div>
+
+        <div class="event-status">
+          UPCOMING
+        </div>
+
       </div>
 
       <div class="event-content">
@@ -345,24 +435,48 @@
         <h3>Branch Meeting</h3>
 
         <p>
-          A meeting for members and supporters to discuss
-          branch activities, coordination and upcoming programmes.
+
+          A branch meeting for members and coordinators
+          to discuss activities, programmes and
+          organizational matters.
+
         </p>
 
-        <span class="event-tag">
-          Branch Activity
-        </span>
+        <div class="event-info">
+
+          <div>
+            📅 Date: To Be Announced
+          </div>
+
+          <div>
+            📍 Venue: To Be Announced
+          </div>
+
+          <div>
+            🕐 Time: To Be Announced
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
 
+    <!-- EVENT 2 -->
+
     <div class="event-card">
 
-      <div class="event-date">
-        <span class="day">02</span>
-        <span class="month">Programme</span>
+      <div class="event-top">
+
+        <div class="event-number">
+          02
+        </div>
+
+        <div class="event-status">
+          PROGRAMME
+        </div>
+
       </div>
 
       <div class="event-content">
@@ -370,24 +484,48 @@
         <h3>Community Engagement</h3>
 
         <p>
-          Community engagement activities designed to encourage
-          communication and participation across Ibaji communities.
+
+          An opportunity for interaction and engagement
+          with members and communities within
+          Ibaji Local Government Area.
+
         </p>
 
-        <span class="event-tag">
-          Community
-        </span>
+        <div class="event-info">
+
+          <div>
+            📅 Date: To Be Announced
+          </div>
+
+          <div>
+            📍 Venue: To Be Announced
+          </div>
+
+          <div>
+            🕐 Time: To Be Announced
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
 
+    <!-- EVENT 3 -->
+
     <div class="event-card">
 
-      <div class="event-date">
-        <span class="day">03</span>
-        <span class="month">Activity</span>
+      <div class="event-top">
+
+        <div class="event-number">
+          03
+        </div>
+
+        <div class="event-status">
+          ACTIVITY
+        </div>
+
       </div>
 
       <div class="event-content">
@@ -395,24 +533,48 @@
         <h3>Youth Engagement</h3>
 
         <p>
-          Activities and discussions encouraging young people
-          to participate in civic and community programmes.
+
+          An organized engagement focused on participation,
+          communication and interaction among young members
+          and participants.
+
         </p>
 
-        <span class="event-tag">
-          Youth
-        </span>
+        <div class="event-info">
+
+          <div>
+            📅 Date: To Be Announced
+          </div>
+
+          <div>
+            📍 Venue: To Be Announced
+          </div>
+
+          <div>
+            🕐 Time: To Be Announced
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
 
+    <!-- EVENT 4 -->
+
     <div class="event-card">
 
-      <div class="event-date">
-        <span class="day">04</span>
-        <span class="month">Meeting</span>
+      <div class="event-top">
+
+        <div class="event-number">
+          04
+        </div>
+
+        <div class="event-status">
+          MEETING
+        </div>
+
       </div>
 
       <div class="event-content">
@@ -420,50 +582,113 @@
         <h3>Members Coordination Meeting</h3>
 
         <p>
-          A platform for members to share information,
-          coordinate activities and discuss branch programmes.
+
+          A coordination meeting for members and
+          representatives to discuss upcoming activities
+          and programmes.
+
         </p>
 
-        <span class="event-tag">
-          Members
-        </span>
+        <div class="event-info">
+
+          <div>
+            📅 Date: To Be Announced
+          </div>
+
+          <div>
+            📍 Venue: To Be Announced
+          </div>
+
+          <div>
+            🕐 Time: To Be Announced
+          </div>
+
+        </div>
 
       </div>
 
     </div>
 
+
   </div>
 
 
+  <!-- NOTICE -->
+
   <div class="notice">
 
-    <h2>Event Updates</h2>
+    <h2>Official Event Information</h2>
 
     <p>
-      Official dates, venues and programme details will be
-      published on this website when they are confirmed.
+
+      Event dates, venues and programme details should be
+      confirmed before publication. This page will be updated
+      when official information is available.
+
     </p>
 
   </div>
 
-</section>
+
+  <!-- CONTACT -->
+
+  <div class="cta">
+
+    <h2>Need More Information?</h2>
+
+    <p>
+
+      For enquiries about events, meetings and programmes,
+      contact the City Boy Movement – Ibaji Branch through
+      the contact page.
+
+    </p>
+
+    <a href="contact.html" class="btn">
+      Contact Us
+    </a>
+
+  </div>
+
+</main>
+
+
+<!-- FOOTER -->
 
 <footer>
 
-  <h3>
-    CITY BOY MOVEMENT – IBAJI BRANCH
-  </h3>
+  <p>
+    <strong>CITY BOY MOVEMENT – IBAJI BRANCH</strong>
+  </p>
 
   <p>
     Ibaji Local Government Area, Kogi State, Nigeria
   </p>
 
   <p>
-    Grassroots Organization • Community Engagement • Civic Participation
+    © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
   </p>
 
-  <div class="copyright">
-    © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
+  <div class="footer-links">
+
+    <a href="index.html">Home</a>
+
+    <a href="about.html">About</a>
+
+    <a href="leadership.html">Leadership</a>
+
+    <a href="activities.html">Activities</a>
+
+    <a href="news.html">News</a>
+
+    <a href="gallery.html">Gallery</a>
+
+    <a href="membership.html">Membership</a>
+
+    <a href="faq.html">FAQ</a>
+
+    <a href="contact.html">Contact</a>
+
   </div>
 
 </footer>
