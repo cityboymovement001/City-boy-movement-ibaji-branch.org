@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Membership | City Boy Movement – Ibaji Branch</title>
+
+  <meta name="description" content="Membership information for City Boy Movement – Ibaji Branch.">
+
+  <meta name="theme-color" content="#087f23">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f8f5;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #087f23, #005c1a);
+      color: white;
+      padding: 15px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 12px;
+      color: #ffd700;
+      margin-top: 2px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    /* WELCOME BAR */
+    .welcome-bar {
+      width: 100%;
+      overflow: hidden;
+      background: #ffd700;
+      color: #063d15;
+      padding: 11px 0;
+      white-space: nowrap;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .welcome-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: welcomeMove 18s linear infinite;
+      animation-delay: 2s;
+    }
+
+    @keyframes welcomeMove {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(
+        rgba(0,70,20,0.92),
+        rgba(0,70,20,0.92)
+      );
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 60px);
+      margin-bottom: 15px;
+    }
+
+    .gold-line {
+      width: 90px;
+      height: 4px;
+      background: #ffd700;
+      margin: 15px auto;
+      border-radius: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+    }
+
+    /* CONTENT */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #087f23;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 45px;
+      color: #555;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      border-top: 5px solid #087f23;
+    }
+
+    .card-icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      color: #087f23;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    /* JOIN SECTION */
+    .join-section {
+      background: linear-gradient(135deg, #087f23, #005c1a);
+      color: white;
+      padding: 50px 25px;
+      border-radius: 18px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .join-section h2 {
+      color: #ffd700;
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .join-section p {
+      max-width: 800px;
+      margin: 0 auto 25px;
+    }
+
+    .contact-button {
+      display: inline-block;
+      background: #ffd700;
+      color: #063d15;
+      text-decoration: none;
+      padding: 13px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .contact-button:hover {
+      background: white;
+    }
+
+    /* NOTICE */
+    .notice {
+      background: #fff8d6;
+      border-left: 5px solid #ffd700;
+      padding: 20px;
+      margin-top: 35px;
+      border-radius: 8px;
+    }
+
+    .notice strong {
+      color: #087f23;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #063d15;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer h3 {
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      color: #ddd;
+      margin: 6px 0;
+    }
+
+    .copyright {
+      margin-top: 22px;
+      padding-top: 15px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      font-size: 13px;
+      color: #ccc;
+    }
+
+    /* MOBILE */
+    @media (max-width: 850px) {
+
+      header {
+        position: relative;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 5px 6px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 340px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+  <div class="nav-container">
+
+    <div class="logo">
+      CITY BOY MOVEMENT
+      <span>IBAJI BRANCH</span>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="activities.html">Activities</a>
+      <a href="news.html">News</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="membership.html">Membership</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- WELCOME -->
+<div class="welcome-bar">
+  <div class="welcome-text">
+    WELCOME TO CITY BOY MOVEMENT – IBAJI BRANCH. Please connect with us for updates, activities, programmes and information from the movement. — MANAGEMENT
+  </div>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>Membership</h1>
+
+    <div class="gold-line"></div>
+
+    <p>
+      Connect, participate and stay informed about activities of the movement.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- MAIN CONTENT -->
+<section class="container">
+
+  <h2 class="section-title">
+    Membership & Participation
+  </h2>
+
+  <p class="intro">
+    City Boy Movement – Ibaji Branch provides a platform for people
+    interested in participating in the movement's activities,
+    programmes, meetings and community engagements.
+  </p>
+
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-icon">🤝</div>
+
+      <h3>Connect</h3>
+
+      <p>
+        Connect with members and coordinators of the movement
+        and stay informed about branch activities.
+      </p>
+    </div>
+
+
+    <div class="card">
+      <div class="card-icon">👥</div>
+
+      <h3>Participate</h3>
+
+      <p>
+        Take part in meetings, programmes, community activities
+        and other officially announced engagements.
+      </p>
+    </div>
+
+
+    <div class="card">
+      <div class="card-icon">📢</div>
+
+      <h3>Stay Updated</h3>
+
+      <p>
+        Follow official announcements, news, events and
+        activities published through the website.
+      </p>
+    </div>
+
+  </div>
+
+
+  <!-- JOIN -->
+  <div class="join-section">
+
+    <h2>Interested in Connecting With Us?</h2>
+
+    <p>
+      For membership information, participation opportunities
+      and official branch enquiries, please contact the
+      City Boy Movement – Ibaji Branch through the contact
+      information provided on this website.
+    </p>
+
+    <a href="contact.html" class="contact-button">
+      Contact Us
+    </a>
+
+  </div>
+
+
+  <!-- NOTICE -->
+  <div class="notice">
+
+    <strong>Important Notice:</strong>
+
+    Membership procedures, meetings, programmes and other
+    official activities should be confirmed through the
+    appropriate City Boy Movement – Ibaji Branch representatives
+    before participation.
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <h3>
+    CITY BOY MOVEMENT – IBAJI BRANCH
+  </h3>
+
+  <p>
+    Ibaji Local Government Area, Kogi State, Nigeria
+  </p>
+
+  <p>
+    Grassroots Organization • Community Engagement • Civic Participation
+  </p>
+
+  <div class="copyright">
+    © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
+  </div>
+
+</footer>
+
+</body>
+</html>
