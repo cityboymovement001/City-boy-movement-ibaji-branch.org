@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact Us | City Boy Movement – Ibaji Branch</title>
+
+  <meta name="description" content="Contact City Boy Movement – Ibaji Branch, Ibaji Local Government Area, Kogi State, Nigeria.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f8f4;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #087f23;
+      color: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      padding: 6px 8px;
+      border-radius: 5px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: #ffd700;
+      color: #063d15;
+    }
+
+    .welcome-bar {
+      width: 100%;
+      overflow: hidden;
+      background: #ffd700;
+      color: #063d15;
+      padding: 11px 0;
+      white-space: nowrap;
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    .welcome-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: welcomeMove 18s linear infinite;
+      animation-delay: 2s;
+    }
+
+    @keyframes welcomeMove {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,92,26,0.88), rgba(0,92,26,0.88));
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .intro h2 {
+      color: #087f23;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 30px 22px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-top: 5px solid #087f23;
+    }
+
+    .icon {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .contact-card h3 {
+      color: #087f23;
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .contact-card a {
+      color: #087f23;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .contact-card a:hover {
+      color: #005c1a;
+      text-decoration: underline;
+    }
+
+    .location-box {
+      margin-top: 35px;
+      background: #087f23;
+      color: white;
+      padding: 35px 20px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .location-box h2 {
+      color: #ffd700;
+      margin-bottom: 12px;
+    }
+
+    .location-box p {
+      font-size: 17px;
+    }
+
+    .connect {
+      margin-top: 35px;
+      background: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    }
+
+    .connect h2 {
+      color: #087f23;
+      margin-bottom: 12px;
+    }
+
+    .whatsapp-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 22px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 7px;
+      font-weight: bold;
+    }
+
+    .whatsapp-btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      background: #005c1a;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 30px;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+    }
+
+    .footer-links {
+      margin-top: 10px;
+    }
+
+    .footer-links a {
+      color: #ffd700;
+      text-decoration: none;
+      margin: 0 7px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      .header-inner {
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 3px;
+      }
+
+      nav a {
+        font-size: 12px;
+        padding: 5px 6px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+
+    <div class="logo">
+      CITY BOY MOVEMENT – IBAJI BRANCH
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="activities.html">Activities</a>
+      <a href="news.html">News</a>
+      <a href="events.html">Events</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="membership.html">Membership</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+<div class="welcome-bar">
+  <div class="welcome-text">
+    WELCOME TO CITY BOY MOVEMENT – IBAJI BRANCH. Please connect with us for updates, activities, programmes and information from the movement. — MANAGEMENT
+  </div>
+</div>
+
+<section class="hero">
+  <h1>Contact Us</h1>
+  <p>
+    Get in touch with City Boy Movement – Ibaji Branch for information,
+    activities, programmes and general enquiries.
+  </p>
+</section>
+
+<main class="container">
+
+  <div class="intro">
+    <h2>Connect With Us</h2>
+    <p>
+      For enquiries and information about the activities of the movement,
+      you can contact us through the official phone numbers provided below.
+    </p>
+  </div>
+
+  <div class="contact-grid">
+
+    <div class="contact-card">
+      <div class="icon">📞</div>
+      <h3>Phone Number 1</h3>
+      <p>Call us directly:</p>
+      <a href="tel:+2347031992677">
+        +234 703 199 2677
+      </a>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon">📞</div>
+      <h3>Phone Number 2</h3>
+      <p>Call us directly:</p>
+      <a href="tel:+2347063969564">
+        +234 706 396 9564
+      </a>
+    </div>
+
+    <div class="contact-card">
+      <div class="icon">💬</div>
+      <h3>WhatsApp</h3>
+      <p>Connect with us through WhatsApp:</p>
+
+      <a
+        class="whatsapp-btn"
+        href="https://wa.me/2347031992677"
+        target="_blank"
+        rel="noopener">
+        Chat on WhatsApp
+      </a>
+    </div>
+
+  </div>
+
+  <div class="location-box">
+    <h2>Our Location</h2>
+    <p>
+      <strong>City Boy Movement – Ibaji Branch</strong>
+    </p>
+    <p>
+      Ibaji Local Government Area,<br>
+      Kogi State, Nigeria
+    </p>
+  </div>
+
+  <div class="connect">
+    <h2>Stay Connected</h2>
+    <p>
+      Follow the website for updates, activities, programmes,
+      announcements and other information from the movement.
+    </p>
+
+    <a class="whatsapp-btn"
+       href="https://wa.me/2347063969564"
+       target="_blank"
+       rel="noopener">
+      Contact Us on WhatsApp
+    </a>
+  </div>
+
+</main>
+
+<footer>
+
+  <p>
+    <strong>CITY BOY MOVEMENT – IBAJI BRANCH</strong>
+  </p>
+
+  <p>
+    Ibaji Local Government Area, Kogi State, Nigeria
+  </p>
+
+  <p>
+    © 2026 City Boy Movement – Ibaji Branch. All Rights Reserved.
+  </p>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="membership.html">Membership</a>
+    <a href="faq.html">FAQ</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+
+</footer>
+
+</body>
+</html>
