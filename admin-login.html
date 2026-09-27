@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Login | City Boy Movement – Ibaji Branch</title>
+
+  <meta name="theme-color" content="#087f23">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #087f23, #005c1a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 420px;
+      background: #ffffff;
+      padding: 35px 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #087f23;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+
+    .logo span {
+      color: #b28a00;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 28px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #087f23;
+      box-shadow: 0 0 0 2px rgba(8,127,35,0.1);
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      background: #087f23;
+      color: white;
+      padding: 14px;
+      border-radius: 7px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #005c1a;
+    }
+
+    .error {
+      display: none;
+      color: #b00020;
+      background: #ffe9ed;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 20px;
+      color: #087f23;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .warning {
+      margin-top: 25px;
+      padding: 12px;
+      background: #fff8d8;
+      border-radius: 7px;
+      font-size: 12px;
+      color: #665500;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="login-box">
+
+  <div class="logo">
+    CITY BOY MOVEMENT<br>
+    <span>IBAJI BRANCH</span>
+  </div>
+
+  <p class="subtitle">
+    News Management Login
+  </p>
+
+  <div class="error" id="errorMessage">
+    Incorrect password. Please try again.
+  </div>
+
+  <form onsubmit="login(event)">
+
+    <label for="password">
+      Admin Password
+    </label>
+
+    <input
+      type="password"
+      id="password"
+      placeholder="Enter admin password"
+      autocomplete="current-password"
+      required
+    >
+
+    <button type="submit">
+      Login
+    </button>
+
+  </form>
+
+  <a class="back" href="news.html">
+    ← Back to News
+  </a>
+
+  <div class="warning">
+    This is temporary website protection. A secure authentication
+    system can be connected later.
+  </div>
+
+</div>
+
+<script>
+
+function login(event) {
+
+  event.preventDefault();
+
+  const password = document.getElementById("password").value;
+
+  /*
+    TEMPORARY ADMIN PASSWORD
+
+    Current password:
+    IbajiAdmin2026
+
+    IMPORTANT:
+    This is not production-grade authentication because
+    the password is contained in the HTML/JavaScript.
+  */
+
+  const adminPassword = "IbajiAdmin2026";
+
+  if (password === adminPassword) {
+
+    sessionStorage.setItem(
+      "cityBoyAdminLoggedIn",
+      "true"
+    );
+
+    window.location.href = "admin-news.html";
+
+  } else {
+
+    document.getElementById(
+      "errorMessage"
+    ).style.display = "block";
+
+    document.getElementById(
+      "password"
+    ).value = "";
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
